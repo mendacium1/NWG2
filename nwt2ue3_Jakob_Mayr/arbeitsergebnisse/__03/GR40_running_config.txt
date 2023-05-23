@@ -1,0 +1,128 @@
+Building configuration...
+
+Current configuration : 2557 bytes
+!
+! Last configuration change at 13:38:21 UTC Fri May 5 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR40
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FCZ203240WR
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.4 255.255.255.240
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343::4/64
+ ipv6 enable
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.121 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:120::1/64
+ ipv6 enable
+!
+interface GigabitEthernet0/2
+ ip address 185.252.73.125 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:124::1/64
+ ipv6 enable
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip route 185.252.73.0 255.255.255.240 185.252.73.12
+ip route 185.252.73.16 255.255.255.240 185.252.73.12
+ip route 185.252.73.64 255.255.255.240 185.252.73.1
+ip route 185.252.73.80 255.255.255.240 185.252.73.2
+ip route 185.252.73.96 255.255.255.240 185.252.73.3
+ip route 185.252.73.112 255.255.255.252 185.252.73.122
+ip route 185.252.73.116 255.255.255.252 185.252.73.126
+ip route 185.252.73.128 255.255.255.240 185.252.73.5
+ip route 185.252.73.144 255.255.255.240 185.252.73.6
+ip route 185.252.73.160 255.255.255.240 185.252.73.7
+ip route 185.252.73.176 255.255.255.240 185.252.73.8
+ip route 185.252.73.192 255.255.255.240 185.252.73.9
+ip route 185.252.73.208 255.255.255.240 185.252.73.10
+!
+ipv6 route 2A0C:2343::/64 2A0C:2343::12
+ipv6 route 2A0C:2343:0:16::/64 2A0C:2343::12
+ipv6 route 2A0C:2343:0:64::/64 2A0C:2343::1
+ipv6 route 2A0C:2343:0:80::/64 2A0C:2343::2
+ipv6 route 2A0C:2343:0:96::/64 2A0C:2343::3
+ipv6 route 2A0C:2343:0:112::/64 2A0C:2343:0:120::2
+ipv6 route 2A0C:2343:0:116::/64 2A0C:2343:0:124::2
+ipv6 route 2A0C:2343:0:128::/64 2A0C:2343::5
+ipv6 route 2A0C:2343:0:144::/64 2A0C:2343::6
+ipv6 route 2A0C:2343:0:160::/64 2A0C:2343::7
+ipv6 route 2A0C:2343:0:176::/64 2A0C:2343::8
+ipv6 route 2A0C:2343:0:192::/64 2A0C:2343::9
+ipv6 route 2A0C:2343:0:208::/64 2A0C:2343::10
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end

@@ -1,0 +1,26 @@
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.122 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:120::2/64
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.113 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:112::1/64
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server

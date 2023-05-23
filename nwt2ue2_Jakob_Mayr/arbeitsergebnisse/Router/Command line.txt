@@ -1,0 +1,114 @@
+GR40:
+	enable
+	configure terminal
+	hostname GR40
+	
+	Configuration Gi 0/0:
+	interface Gi 0/0
+	no shutdown
+	ip address 185.252.73.4 255.255.255.240
+	ipv6 address 2a0c:2343:0:0::4/64
+	exit
+
+	Configuration Gi 0/1:
+	interface Gi 0/1
+	no shutdown
+	ip address 185.252.73.121 255.255.255.252
+	ipv6 address 2a0c:2343:0:120::1/64
+	exit
+
+	Configuration Gi 0/2:
+	interface Gi 0/2
+	no shutdown
+	ip address 185.252.73.125 255.255.255.252
+	ipv6 address 2a0c:2343:0:125::1/64
+	exit
+
+#################################################################
+
+	OSPF Ipv4:
+	router ospf 1
+	network 185.252.73.4 0.0.0.15 area 0
+	network 185.252.73.121 0.0.0.3 area 0
+	network 185.252.73.125 0.0.0.3 area 0
+
+	OSPF Ipv6:
+	ipv6 router ospf 1
+	interface range GigabitEthernet 0/0-2
+	ipv6 ospf 1 area 0
+	end
+
+###################################################################
+
+
+GR41:
+	enable
+	configure terminal
+	hostname GR41
+	
+	Configuration Gi 0/0:
+	interface Gi 0/0
+	no shutdown
+	ip address 185.252.73.122 255.255.255.252
+	ipv6 address 2a0c:2343:0:120::2/64
+	exit
+
+	Configuration Gi 0/1:
+	interface Gi 0/1
+	no shutdown
+	ip address 185.252.73.113 255.255.255.252
+	ipv6 address 2a0c:2343:0:112::1/64
+	exit
+
+#################################################################
+
+	OSPF Ipv4:
+	router ospf 1
+	network 185.252.73.122 0.0.0.3 area 0
+	network 185.252.73.113 0.0.0.3 area 0
+	exit
+
+	OSPF Ipv6:
+	ipv6 unicast-routing
+	ipv6 router ospf 1
+	interface range GigabitEthernet 0/0-1
+	ipv6 ospf 1 area 0
+	end
+
+###################################################################
+
+GR42:
+	enable
+	configure terminal
+	hostname GR42
+	
+	Configuration Gi 0/0/0:
+	interface Gi 0/0/0
+	no shutdown
+	ip address 185.252.73.126 255.255.255.252
+	ipv6 address 2a0c:2343:0:124::2/64
+	exit
+
+	Configuration Gi 0/0/1:
+	interface Gi 0/0/1
+	no shutdown
+	ip address 185.252.73.117 255.255.255.252
+	ipv6 address 2a0c:2343:0:116::1/64
+	exit
+
+#################################################################
+
+	OSPF Ipv4:
+	router ospf 1
+	network 185.252.73.126 0.0.0.3 area 0
+	network 185.252.73.117 0.0.0.3 area 0
+	exit
+
+	OSPF Ipv6:
+	ipv6 unicast-routing
+	ipv6 router ospf 1
+	interface range GigabitEthernet 0/0/0-1
+	ipv6 ospf 1 area 0
+	end
+
+###################################################################

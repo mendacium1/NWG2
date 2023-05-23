@@ -1,0 +1,599 @@
+
+% Please answer 'yes' or 'no'.
+Would you like to enter basic management setup? [yes/no]: no
+
+First, would you like to see the current interface summary? [yes]: yes
+
+
+Any interface listed with OK? value "NO" does not have a valid configuration
+
+Interface                  IP-Address      OK? Method Status                Prot                                                                 ocol
+Embedded-Service-Engine0/0 unassigned      NO  unset  initializing          down                                                                 
+GigabitEthernet0/0         unassigned      NO  unset  up                    up                                                                   
+GigabitEthernet0/1         unassigned      NO  unset  up                    up                                                                   
+GigabitEthernet0/2         unassigned      NO  unset  up                    up                                                                   
+
+Configuring global parameters:
+
+  Enter host name [Router]:
+
+  The enable secret is a password used to protect access to
+  privileged EXEC and configuration modes. This password, after
+  entered, becomes encrypted in the configuration.
+
+  The enable password is used when you do not specify an
+  enable secret password, with some older software versions, and
+  some boot images.
+
+  The virtual terminal password is used to protect
+  access to the router over a network interface.
+AutoSecure dialog can be started later using "auto secure" CLI
+
+Configuration aborted, no changes made.
+
+
+
+Press RETURN to get started!
+
+
+*Jan  2 00:00:03.675: %SMART_LIC-6-AGENT_READY: Smart Agent for Licensing is initialized
+*Jan  2 00:00:03.999: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c2900 Next reboot level = ipbasek9 and License = ipbasek9
+*Apr 27 06:13:48.667: c3600_scp_set_dstaddr2_idb(185)add = 80 name is Embedded-Service-Engine0/0
+*Apr 27 06:14:02.155: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Apr 27 06:14:02.155: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Router>
+*Apr 27 06:14:02.155: %LINK-3-UPDOWN: Interface GigabitEthernet0/2, changed state to down
+*Apr 27 06:14:03.327: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+*Apr 27 06:14:03.327: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+*Apr 27 06:14:03.327: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
+*Apr 27 07:57:53.399: %PNP-6-PNP_DISCOVERY_STOPPED: PnP Discovery stopped (Config Wizard)
+*Apr 27 08:00:42.739: %LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down
+*Apr 27 08:00:43.143: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down
+*Apr 27 08:00:44.683: %LINK-5-CHANGED: Interface Embedded-Service-Engine0/0, changed state to administratively down
+*Apr 27 08:00:44.683: %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+*Apr 27 08:00:44.911: %IP-5-WEBINST_KILL: Terminating DNS process
+*Apr 27 08:00:45.683: %LINEPROTO-5-UPDOWN: Line protocol on Interface Embedded-Service-Engine0/0, changed state to down
+*Apr 27 08:00:45.683: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+*Apr 27 08:00:52.427: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.7(3)M4a, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Mon 25-Mar-19 08:41 by prod_rel_team
+Router>enable
+Router#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+Router>enable
+Router#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>enable
+Router#show running-config
+Building configuration...
+
+Current configuration : 1007 bytes
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+
+Router#how
+Router#show config
+startup-config is not present
+Router#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname GR41
+GR41(config)#show running-config
+               ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#show running-config
+               ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#show running
+               ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#exit
+GR41#
+*Apr 27 08:45:43.455: %SYS-5-CONFIG_I: Configured from console by console
+GR41#do show run
+        ^
+% Invalid input detected at '^' marker.
+
+GR41#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR41(config)#do show run
+Building configuration...
+
+Current configuration : 1067 bytes
+!
+! Last configuration change at 08:45:43 UTC Thu Apr 27 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+
+GR41(config)#hostname GR40
+GR40(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GR40 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+*Apr 27 09:02:54.119: %SYS-5-CONFIG_I: Configured from console by console
+GR40>enable
+GR40#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR40(config)#hostname GR41
+GR41(config)#interface GE0/1
+                        ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#interface ge0/1
+                        ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#interface -h
+                       ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#interface help
+                       ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#interface GigabitEthernet0/1
+GR41(config-if)#ipadress
+                  ^
+% Invalid input detected at '^' marker.
+
+GR41(config-if)#ip adress
+                     ^
+% Invalid input detected at '^' marker.
+
+GR41(config-if)#ip address
+% Incomplete command.
+
+GR41(config-if)#ip address 185.252.73.113
+% Incomplete command.
+
+GR41(config-if)#ip address 185.252.73.113
+GR41(config-if)#ip address 185.252.73.113
+% Incomplete command.
+
+GR41(config-if)#ip-address
+                  ^
+% Invalid input detected at '^' marker.
+
+GR41(config-if)#interface g0/1
+GR41(config-if)#Ip address 185.252.73.113
+% Incomplete command.
+
+GR41(config-if)#Ip address 185.252.73.113 255.255.255.252
+GR41(config-if)#show running-config
+                  ^
+% Invalid input detected at '^' marker.
+
+GR41(config-if)#running-config
+                 ^
+% Invalid input detected at '^' marker.
+
+GR41(config-if)#exit
+GR41(config)#exit
+GR41#
+*Apr 27 09:20:58.587: %SYS-5-CONFIG_I: Configured from console by consoleshow running-config
+Building configuration...
+
+Current configuration : 1095 bytes
+!
+! Last configuration change at 09:20:58 UTC Thu Apr 27 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FCZ203240WR
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.113 255.255.255.252
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
+
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#
+GR41#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR41(config)#interface g0/1
+GR41(config-if)#ipv6 address 2a0c:2343:0:112::1/64
+GR41(config-if)#exit
+GR41(config)#show running-config
+               ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#exit
+GR41#sh
+*Apr 27 09:34:31.663: %SYS-5-CONFIG_I: Configured from console by conso
+GR41#show running-config
+Building configuration...
+
+Current configuration : 1131 bytes
+!
+! Last configuration change at 09:34:31 UTC Thu Apr 27 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FCZ203240WR
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.113 255.255.255.252
+ shutdown
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:112::1/64
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end

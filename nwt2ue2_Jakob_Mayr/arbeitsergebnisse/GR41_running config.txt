@@ -1,0 +1,113 @@
+
+GR41#show running-config
+Building configuration...
+
+Current configuration : 1288 bytes
+!
+! Last configuration change at 09:08:02 UTC Fri Apr 28 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn FCZ2033B0E1
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.122 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:120::2/64
+ ipv6 ospf 1 area 0
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.113 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:112::1/64
+ ipv6 ospf 1 area 0
+!
+router ospf 1
+ network 185.252.73.112 0.0.0.3 area 0
+ network 185.252.73.120 0.0.0.3 area 0
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ipv6 router ospf 1
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end

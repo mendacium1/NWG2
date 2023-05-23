@@ -1,0 +1,421 @@
+GR42(config)#do show run
+Building configuration...
+
+
+Current configuration : 6147 bytes
+!
+! Last configuration change at 14:08:19 UTC Wed Apr 26 2023
+!
+version 16.12
+service timestamps debug datetime msec
+service timestamps log datetime msec
+! Call-home is enabled by Smart-Licensing.
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname GR42
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+!
+no aaa new-model
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
+!
+!
+!
+!
+login on-success log
+ipv6 unicast-routing
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2961067230
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2961067230
+ revocation-check none
+ rsakeypair TP-self-signed-2961067230
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-2961067230
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32393631 30363732 3330301E 170D3233 30343236 31343031
+  31325A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 39363130
+  36373233 30308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201
+  0A028201 0100B003 12EB1511 DFC98692 76AB42E8 29FAB48B 0C674569 C16B3784
+  7F4944E4 E35CE3E7 4B0797C8 C88B9410 2AA1134D 282E7656 71C3ED27 AEB4B7D8
+  D9EB780F 1FD89538 68568A56 5F7F37D1 62D2B9CF E9CF0531 920D1873 89B7EF45
+  8EEDFFF3 175EE674 11DBBEE4 245C722F B1BF1E77 E28328F1 0DE85C3E 5D23E5E5
+  B1DEF102 314DD9D7 92E2B01A 7728D489 4C1DFABB 14D055D1 9275FEF4 BBE0BA0F
+  B28E9F2E A7181432 6BB1CAC3 88537F3C 3841668F 84B45E6B 3D0161F6 4CCAA803
+  ED221BCF 8150FA48 B6622EC2 15747FC0 161A95F2 3FD59A4F DEAB283C 1C216143
+  59482F78 ADC6C0A8 13CAF975 E24E1B97 35E7E5A1 133B4D21 80881480 E7AAC1A8
+  B1AEB031 67970203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF
+  301F0603 551D2304 18301680 1404F724 67F010FD B8A5B684 CF2EB376 DC18E91D
+  0E301D06 03551D0E 04160414 04F72467 F010FDB8 A5B684CF 2EB376DC 18E91D0E
+  300D0609 2A864886 F70D0101 05050003 82010100 7255CB50 4BF654BE 830A48A5
+  8B6438C9 0A1E7084 8215A8EC FB51455B DC0942AF AFC6B59C B8AC33D9 B4C04B33
+  D28330B3 1AAE9355 1261D20E D9EBE278 15942EBA F9D59BAE AE5F8222 5DCF4F0C
+  84B43DCF FBBB339A C63238D3 57155B15 78517286 1D893471 2610505F A359CCB0
+  4E977D14 DB3BAB16 174CC5E5 806B3378 197FCCFE 0D423C44 CC0591FB 783A1B60
+  C2A10EC7 5FB60801 720610B6 32D71603 3AA76E8B AAB01B34 2D62267A 6F1EDF14
+  7B8DD4D8 E6579B79 425F5F21 D9DE3328 071532E0 3A3B8AD5 E0ED83A1 7810D0E2
+  7315F6CC C3985F6A F26E7899 A54D36AC 3B06B127 11B6ED72 1D186D17 FE973A8D
+  16FCA2D4 11AE1F2A 5F29986B 1315A906 3782DE3E
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+!
+!
+no license feature hseck9
+license udi pid ISR4321/K9 sn FDO25060YMK
+license boot level securityk9
+memory free low-watermark processor 67107
+!
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 185.252.73.126 255.255.255.252
+ negotiation auto
+ ipv6 address 2A0C:2343:0:124::2/64
+!
+interface GigabitEthernet0/0/1
+ ip address 185.252.73.117 255.255.255.252
+ negotiation auto
+ ipv6 address 2A0C:2343:0:116::1/64
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip tftp source-interface GigabitEthernet0
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+!
+!
+!
+!
+end
+
+GR42(config)#exit
+GR42#
+*Apr 26 14:51:38.129: %SYS-5-CONFIG_I: Configured from console by console
+GR42#ping 185.252.73.121
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 185.252.73.121, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+GR42#ping 185.252.73.122
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 185.252.73.122, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+GR42#ping 185.252.73.125
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 185.252.73.125, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 1/1/1 ms
+GR42#ping 185.252.73.125
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 185.252.73.125, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+GR42#
+GR42#
+GR41>enable
+GR41#ping 185.252.73.121
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 185.252.73.121, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/4 ms
+GR41#
+GR41#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR41(config)#router ospf 1
+GR41(config-router)#network 185.252.73.112 0.0.0.3 area 0
+GR41(config-router)#network 185.252.73.120 0.0.0.3 area 0
+GR41(config-router)#end
+GR41#
+*Apr 26 14:20:00.726: %SYS-5-CONFIG_I: Configured from console by console
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GR42 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+*Apr 26 15:04:22.297: %SYS-6-TTY_EXPIRE_TIMER: (exec timer expired, tty 0 (0.0.0.0)), user
+GR41#enable
+GR41#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR41(config)#interface GI 0/0
+GR41(config-if)#ipv6 ospf 1 area 0
+GR41(config-if)#exit
+GR41(config)#interface GI 0/1
+GR41(config-if)#ipv6 ospf 1 area 0
+GR41(config-if)#exit
+GR41(config)#do show run
+GR41(config)#do show running-config
+Building configuration...
+
+Current configuration : 1288 bytes
+!
+! Last configuration change at 14:20:00 UTC Wed Apr 26 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn FCZ2033B0E1
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.122 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:120::2/64
+ ipv6 ospf 1 area 0
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.113 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:112::1/64
+ ipv6 ospf 1 area 0
+!
+router ospf 1
+ network 185.252.73.112 0.0.0.3 area 0
+ network 185.252.73.120 0.0.0.3 area 0
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ipv6 router ospf 1
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end

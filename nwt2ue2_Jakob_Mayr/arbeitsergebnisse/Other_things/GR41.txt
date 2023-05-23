@@ -1,0 +1,142 @@
+GR41>
+GR41>enable
+GR41#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR41(config)#ipv6 unicast
+GR41(config)#ipv6 unicast rout
+GR41(config)#ipv6 unicast-routing
+GR41(config)#ipv6 unicast-routing
+GR41(config)#interface GI
+GR41(config)#interface GIgabitEthernet 0/0
+GR41(config-if)#ip address 185.252.73.122 255.255.255.252
+GR41(config-if)#ipv6 address
+GR41(config-if)#ipv6 address 2a0c:2343:0:120::2/64
+GR41(config-if)#no
+GR41(config-if)#no shut
+GR41(config-if)#
+*Apr 26 13:14:16.290: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to down
+GR41(config-if)#
+*Apr 26 13:14:20.650: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Apr 26 13:14:21.650: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+GR41(config-if)#exit
+GR41(config)#interface GI
+GR41(config)#interface GIgabitEthernet 0/1
+GR41(config-if)#ip address 185.252.73.113 255.255.255.252
+GR41(config-if)#ipv6 address 2a0c:2343:0:112::1/64
+GR41(config-if)#no shut
+GR41(config-if)#
+*Apr 26 13:15:53.710: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+*Apr 26 13:15:58.650: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+*Apr 26 13:15:59.650: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+GR41(config-if)#exit
+GR41(config)#do show run+
+                        ^
+% Invalid input detected at '^' marker.
+
+GR41(config)#do show run
+Building configuration...
+
+Current configuration : 1133 bytes
+!
+! Last configuration change at 12:48:04 UTC Wed Apr 26 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn FCZ2033B0E1
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.122 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:120::2/64
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.113 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343:0:112::1/64
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
+
+GR41(config)#

@@ -1,0 +1,368 @@
+GR40#enable
+GR40#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.  End with CNTL/Z.
+GR40(config)#show run
+GR40(config)#show run
+GR40(config)#show runing
+GR40(config)#show running
+               ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#show runing
+               ^
+% Invalid input detected at '^' marker.
+
+GR40(config)##show run
+GR40(config)#show run
+GR40(config)#show run
+               ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#do show run
+Building configuration...
+
+Current configuration : 1119 bytes
+!
+! Last configuration change at 12:45:41 UTC Wed Apr 26 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR40
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FCZ203240WR
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.4 255.255.255.240
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.121 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 185.252.73.125 255.255.255.252
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
+
+GR40(config)#
+GR40(config)#!
+GR40(config)#interface G
+GR40(config)#interface GI
+GR40(config)#interface GIgabitEthernet 0/0
+GR40(config-if)#ipv6
+GR40(config-if)#ipv6 address
+GR40(config-if)#ipv6 address 2a0c:2343:0:0::4/64
+GR40(config-if)#exit
+GR40(config)#do
+GR40(config)#do show run
+Building configuration...
+
+Current configuration : 1149 bytes
+!
+! Last configuration change at 12:45:41 UTC Wed Apr 26 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR40
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FCZ203240WR
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.4 255.255.255.240
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343::4/64
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.121 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 185.252.73.125 255.255.255.252
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
+
+GR40(config)# uni
+GR40(config)# unicast
+GR40(config)# unicast Routing
+               ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#interface GIgabitEthernet 0/0
+GR40(config-if)#exit
+GR40(config)#ipv6 ena
+GR40(config)#ipv6 enable
+GR40(config)#ipv6 enable
+                  ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#ipv6 unicast rou
+GR40(config)#ipv6 unicast routing
+GR40(config)#ipv6 unicast routing
+                          ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#ipv6 unicast-routing
+GR40(config)#do show
+GR40(config)#do show runni
+GR40(config)#do show running-config
+Building configuration...
+
+Current configuration : 1167 bytes
+!
+! Last configuration change at 12:45:41 UTC Wed Apr 26 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR40
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FCZ203240WR
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 185.252.73.4 255.255.255.240
+ duplex auto
+ speed auto
+ ipv6 address 2A0C:2343::4/64
+!
+interface GigabitEthernet0/1
+ ip address 185.252.73.121 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 185.252.73.125 255.255.255.252
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
+
+GR40(config)#interface GI
+GR40(config)#interface GIgabitEthernet 0/1
+GR40(config-if)#ipv6 address 2a0c:2343:0:120::1/64
+GR40(config-if)#exit
+GR40(config)#interface GI
+GR40(config)#interface GIgabitEthernet 0/2
+GR40(config-if)#ipv6 address 2a0c:2343:0:124::1/64
+GR40(config-if)#exit
+GR40(config)#ip default-Gateway
+GR40(config)#ip default-Gateway 185.252.73.12 255.255.255.240
+                                              ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#ip default-Gateway 185.252.73.12
+GR40(config)#ipv6 default-Gateway 2a0c:2343:0:0::12
+                   ^
+% Invalid input detected at '^' marker.
+
+GR40(config)#ipv6 default-Gateway 2a0c:2343:0:0::12
+GR40(config)#no ip default-Gateway 185.252.73.12
