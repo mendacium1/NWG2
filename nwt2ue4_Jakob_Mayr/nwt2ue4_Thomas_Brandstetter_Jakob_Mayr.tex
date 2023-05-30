@@ -50,7 +50,7 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
 \section{Konfiguration des Gruppenswitches}
 
 Für die Konfiguration des Gruppenswitches wurden für die Clients die Ports FastEthernet0/11 und FastEthernet0/12, für den Backbone-Switch der Port GigabitEthernet0/1 und für den Gruppenrouter der Port GigabitEthernet0/2 verwendet.
-Die Ports für die Clients wurden mit dem "access mode" für die VLANS 41 bzw. 42 konfiguriert.
+Die Ports für die Clients wurden mit dem „access mode“ für die VLANS 41 bzw. 42 konfiguriert.
 
 \begin{table}[htbp]
     \centering
@@ -106,18 +106,90 @@ Für die Konfiguration des Gruppenrouters wurde der Port GigabitEthernet0/0 verw
     \caption{Verwendete Befehle für die Konfiguration des Gruppenrouters}
     \label{tab:commands}
 \end{table}
-\noindent Bei der Konfiguration des Gruppenrouters müssen natürlich wieder das ipv6-unicast-routing (mit dem bereits bekannten Befehl) und der Befehl "no-shutdown" für das Interface verwendet werden.
+\noindent Bei der Konfiguration des Gruppenrouters müssen natürlich wieder das ipv6-unicast-routing (mit dem bereits bekannten Befehl) und der Befehl „no shutdown“ für das Interface verwendet werden.
 
 \section{Fragen zur Konfiguration}
 
 \subsection*{Frage 4.1 \normalfont Warum sind verschiedene VLANs im selben IP Netz nicht sinnvoll}
-Da die Eigenschaften von IP-Netzen standardmäßig vorsehen, dass IP-Adressen untereinander "direkt" kommunizieren können ergibt es keinen Sinn ein Netz in VLANs aufzuteilen. Möchte man eine granularere Einteilung kann man das Netz auch in Subnetze trennen.
+Da die Eigenschaften von IP-Netzen standardmäßig vorsehen, dass IP-Adressen untereinander „direkt“ kommunizieren können ergibt es keinen Sinn ein Netz in VLANs aufzuteilen. Möchte man eine granularere Einteilung kann man das Netz auch in Subnetze trennen.
+
 \subsection*{Frage 4.2 \normalfont Warum müssen auf den Subinterfaces die VLANs bekannt gegeben werden? Warum muss der angeschlossene Switch Port ein Trunk Port sein?}
 Standardmäßig würde ein Port im „trunk mode“ alle VLANs routen, da die Aufgabenstellung allerdings verlangt, dass nur bestimmte VLANs geroutet werden können, müssen diese explizit angegeben werden. Ein Trunk Port wird benötigt, damit über diesen Port Netzwerkverkehr von mehreren VLANs geroutet werden können.
 
+\subsection*{Frage 4.3 \normalfont Könnte eine Anbindung der Gruppenrouter auch ohne Subinterfaces funktionieren? Wenn ja, wie?}
+Man könnte alternativ auch für jedes VLAN ein eigenes Interface verwenden, da ein Router allerdings eine begrenzte Anzahl von Ports hat, ist dies nicht sinnvoll.
+
+\subsection*{Frage 4.4 \normalfont Warum ist hier das anlegen der Default Routen nötig? Welche Erreichbarkeiten sind nur so sicherzustellen.}
+Um beispielsweise von dem Client PC42 auf den next-hop zu kommen müssen Default-Routen angelegt werden. Der Client hat als Gateway den GR41 angegeben und muss somit von diesem weitergeroutet werden.
+
+
+\subsection*{Frage 4.5 \normalfont Wie wirken sich Trunk Ports auf die Source Address Table aus? Warum ändert sich die Source Address Table im Lauf der Zeit?}
+Da über Trunk Ports mehrer MAC-Addressen angeschlossen sind entstehen im Source Address Table pro Port auch mehrere Einträge. Da mit der Zeit durch ARP-Requests weitere Adressen „gelernt“ werden erweitert sich die Tabelle.
+
 \section{Tests und Interpretation ihrer Resultate}
 
-...
+\subsection{GR41}
+\begin{figure}[!htp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/GR41/gr41_ping_backbone.png}
+    \caption{GR41 ping backbone}
+  \end{minipage}
+  \hspace{0.8cm}
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/GR41/gr41_routing_table.png}
+    \caption{GR41 routing table}
+  \end{minipage}
+\end{figure}
+
+\subsection{GS41}
+\begin{figure}[!htp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/GS41/gs41_mac_address-table.png}
+    \caption{GS41 mac address table}
+  \end{minipage}
+\end{figure}
+
+\subsection{PC41}
+\begin{figure}[!htp]
+  \centering
+  \begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_pc0.png}
+    \caption{PC41 ping PC0}
+  \end{minipage}
+  \hspace{0.8cm}
+  \begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_net3.png}
+    \caption{PC41 ping Netz3}
+  \end{minipage}
+  \hspace{0.8cm}
+  \begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_net6.png}
+    \caption{PC41 ping Netz6}
+  \end{minipage}
+\end{figure}
+
+\subsection{PC42}
+\begin{figure}[!htp]
+  \centering
+  \begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_pc0.png}
+    \caption{PC42 ping PC0}
+  \end{minipage}
+  \hspace{0.8cm}
+  \begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_net3.png}
+    \caption{PC41 ping Netz3}
+  \end{minipage}
+  \hspace{0.8cm}
+  \begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC42/pc41_ping_net5.png}
+    \caption{PC41 ping Netz5}
+  \end{minipage}
+\end{figure}
+
+
 
 \section{Konfiguration}
 
