@@ -126,9 +126,11 @@ Um beispielsweise von dem Client PC42 auf den next-hop zu kommen müssen Default
 \subsection*{Frage 4.5 \normalfont Wie wirken sich Trunk Ports auf die Source Address Table aus? Warum ändert sich die Source Address Table im Lauf der Zeit?}
 Da über Trunk Ports mehrer MAC-Addressen angeschlossen sind entstehen im Source Address Table pro Port auch mehrere Einträge. Da mit der Zeit durch ARP-Requests weitere Adressen „gelernt“ werden erweitert sich die Tabelle.
 
+\pagebreak
 \section{Tests und Interpretation ihrer Resultate}
 
 \subsection{GR41}
+Ping von Gruppenrouter 41 zum Backbone Router sowie die Routing Tabelle des Gruppenrouters.\\
 \begin{figure}[!htp]
   \centering
   \begin{minipage}[b]{0.45\textwidth}
@@ -143,6 +145,7 @@ Da über Trunk Ports mehrer MAC-Addressen angeschlossen sind entstehen im Source
 \end{figure}
 
 \subsection{GS41}
+Source (oder MAC) Address Tabelle des Gruppenswitches.\\
 \begin{figure}[!htp]
   \centering
   \begin{minipage}[b]{0.45\textwidth}
@@ -151,39 +154,42 @@ Da über Trunk Ports mehrer MAC-Addressen angeschlossen sind entstehen im Source
   \end{minipage}
 \end{figure}
 
+\pagebreak
 \subsection{PC41}
+Ping von PC41 zu PC0, Ping von PC41 zu PC31 in Netz 3 sowie Ping von PC41 zu PC61 in Netz 6.\\
 \begin{figure}[!htp]
   \centering
-  \begin{minipage}[b]{0.3\textwidth}
+  \begin{minipage}[b]{0.25\textwidth}
     \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_pc0.png}
     \caption{PC41 ping PC0}
   \end{minipage}
   \hspace{0.8cm}
-  \begin{minipage}[b]{0.3\textwidth}
+  \begin{minipage}[b]{0.25\textwidth}
     \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_net3.png}
     \caption{PC41 ping Netz3}
   \end{minipage}
   \hspace{0.8cm}
-  \begin{minipage}[b]{0.3\textwidth}
+  \begin{minipage}[b]{0.25\textwidth}
     \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_net6.png}
     \caption{PC41 ping Netz6}
   \end{minipage}
 \end{figure}
 
 \subsection{PC42}
+Ping von PC42 zu PC0, Ping von PC42 zu PC32 in Netz 3 sowie Ping von PC42 zu PC62 in Netz 6.\\
 \begin{figure}[!htp]
   \centering
-  \begin{minipage}[b]{0.3\textwidth}
+  \begin{minipage}[b]{0.25\textwidth}
     \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_pc0.png}
     \caption{PC42 ping PC0}
   \end{minipage}
   \hspace{0.8cm}
-  \begin{minipage}[b]{0.3\textwidth}
+  \begin{minipage}[b]{0.25\textwidth}
     \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_ping_net3.png}
     \caption{PC41 ping Netz3}
   \end{minipage}
   \hspace{0.8cm}
-  \begin{minipage}[b]{0.3\textwidth}
+  \begin{minipage}[b]{0.25\textwidth}
     \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC42/pc41_ping_net5.png}
     \caption{PC41 ping Netz5}
   \end{minipage}
