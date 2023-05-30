@@ -9,6 +9,8 @@
 \usepackage{subcaption} % Added package
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{booktabs}
 
 
 \title{Übungsprotokoll - NWT2 - Übung 03}
@@ -49,14 +51,36 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
 Für die Konfiguration des Gruppenswitches wurden für die Clients die Ports FastEthernet0/11 und FastEthernet0/12, für den Backbone-Switch der Port GigabitEthernet0/1 und für den Router der Port GigabitEthernet0/2 verwendet.
 Die Ports für die Clients wurden mit dem "access mode" für die VLANS 41 bzw. 42 konfiguriert.
 
-\begin{tabular}{ | m{0.45\textwidth} | m{0.45\textwidth} | } 
-  \hline
-  switchport access vlan <vlan-tag-numbers> & Mit diesem Befehl wird ein Switchport im "access mode" einem oder mehreren VLANS zugeordnet. \\ 
-  \hline
-  switchport mode access & Mit diesem Befehl wird ein switchport in den "access omde" gesetzt. \\ 
-  \hline
-\end{tabular}
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{>{\bfseries}lX}
+        \toprule
+        \textbf{Befehl} & \textbf{Erklärung} \\
+        \midrule
+        switchport access vlan <vlan-tag-numbers> & Mit diesem Befehl wird ein Switchport im "access mode" einem oder mehreren VLANS zugeordnet. \\
+        \hline
+        switchport mode access & Mit diesem Befehl wird ein switchport in den "access omde" gesetzt. \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Verwendete Befehle der Switchports für die Clients}
+    \label{tab:commands}
+\end{table}
+
 Die Ports für den Backbone-Switch und den Gruppenrouter wurden mit dem "trunk mode" konfiguriert und haben daher keine zugehörige VLAN-Konfiguration.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{>{\bfseries}lX}
+        \toprule
+        \textbf{Befehl} & \textbf{Erklärung} \\
+        \midrule
+        switchport mode trunk & Mit diesem Befehl wird ein switchport in den "trunk mode" gesetzt. \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Verwendete Befehle der Switchports für Backbone und Router}
+    \label{tab:commands}
+\end{table}
+
 \subsection{Konfiguration der Gruppenrouter}
 
 ...

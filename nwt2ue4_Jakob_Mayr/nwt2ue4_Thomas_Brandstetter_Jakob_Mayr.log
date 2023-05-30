@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.5.26)  29 MAY 2023 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.5.26)  30 MAY 2023 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,32 +337,66 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen175
+\TX@old@table=\dimen176
+\TX@old@col=\dimen177
+\TX@target=\dimen178
+\TX@delta=\dimen179
+\TX@cols=\count291
+\TX@ftn=\toks24
+)
+(/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen180
+\lightrulewidth=\dimen181
+\cmidrulewidth=\dimen182
+\belowrulesep=\dimen183
+\belowbottomsep=\dimen184
+\aboverulesep=\dimen185
+\abovetopsep=\dimen186
+\cmidrulesep=\dimen187
+\cmidrulekern=\dimen188
+\defaultaddspace=\dimen189
+\@cmidla=\count292
+\@cmidlb=\count293
+\@aboverulesep=\dimen190
+\@belowrulesep=\dimen191
+\@thisruleclass=\count294
+\@lastruleclass=\count295
+\@thisrulewidth=\dimen192
+)
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count291
+\l__color_backend_stack_int=\count296
 \l__pdf_internal_box=\box55
 )
-(./nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.aux)
+(./nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.aux
+
+LaTeX Warning: Label `tab:commands' multiply defined.
+
+)
 \openout1 = `nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -400,29 +434,21 @@ LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count292
-\scratchdimen=\dimen175
+\scratchcounter=\count297
+\scratchdimen=\dimen193
 \scratchbox=\box56
-\nofMPsegments=\count293
-\nofMParguments=\count294
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count295
-\MPscratchDim=\dimen176
-\MPnumerator=\count296
-\makeMPintoPDFobject=\count297
-\everyMPtoPDFconversion=\toks25
+\nofMPsegments=\count298
+\nofMParguments=\count299
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count300
+\MPscratchDim=\dimen194
+\MPnumerator=\count301
+\makeMPintoPDFobject=\count302
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -441,7 +467,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 17.
+Package hyperref Info: Link coloring ON on input line 19.
 
 (./nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.out)
 (./nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.out)
@@ -452,31 +478,32 @@ Package hyperref Info: Link coloring ON on input line 17.
 File: Arbeitsergebnisse/PC41/pc41_IPv4_config.png Graphic file (type png)
 <use Arbeitsergebnisse/PC41/pc41_IPv4_config.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC41/pc41_IPv4_config.png  used on i
-nput line 27.
+nput line 29.
 (pdftex.def)             Requested size: 88.71434pt x 100.69292pt.
 <Arbeitsergebnisse/PC41/pc41_IPv6_config.png, id=30, 407.02063pt x 342.27875pt>
 
 File: Arbeitsergebnisse/PC41/pc41_IPv6_config.png Graphic file (type png)
 <use Arbeitsergebnisse/PC41/pc41_IPv6_config.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC41/pc41_IPv6_config.png  used on i
-nput line 32.
+nput line 34.
 (pdftex.def)             Requested size: 88.71434pt x 74.6017pt.
 <Arbeitsergebnisse/PC42/pc42_IPv4_config.png, id=31, 301.125pt x 341.77687pt>
 File: Arbeitsergebnisse/PC42/pc42_IPv4_config.png Graphic file (type png)
 <use Arbeitsergebnisse/PC42/pc42_IPv4_config.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC42/pc42_IPv4_config.png  used on i
-nput line 37.
+nput line 39.
 (pdftex.def)             Requested size: 88.71434pt x 100.69292pt.
 <Arbeitsergebnisse/PC42/pc42_IPv6_config.png, id=32, 407.02063pt x 341.77687pt>
 
 File: Arbeitsergebnisse/PC42/pc42_IPv6_config.png Graphic file (type png)
 <use Arbeitsergebnisse/PC42/pc42_IPv6_config.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC42/pc42_IPv6_config.png  used on i
-nput line 42.
+nput line 44.
 (pdftex.def)             Requested size: 88.71434pt x 74.49231pt.
 
-Overfull \hbox (12.91856pt too wide) in paragraph at lines 52--60
-[][] \T1/cmr/m/n/10 Die
+Overfull \hbox (5.71825pt too wide) in paragraph at lines 69--70
+[]\T1/cmr/m/n/10 Die Ports für den Backbone-Switch und den Grup-pen-rou-ter wur
+-den mit dem tt-runk mo-de"konfiguriert
  []
 
 [1
@@ -486,29 +513,33 @@ Overfull \hbox (12.91856pt too wide) in paragraph at lines 52--60
 .png> <./Arbeitsergebnisse/PC41/pc41_IPv6_config.png> <./Arbeitsergebnisse/PC42
 /pc42_ipv4_config.png> <./Arbeitsergebnisse/PC42/pc42_ipv6_config.png>]
 [2] (./nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.out' 
 has not changed.
 (rerunfilecheck)             Checksum: E679502C429A6C5A73AC13C0D856304C;1195.
  ) 
 Here is how much of TeX's memory you used:
- 12213 strings out of 476025
- 198274 string characters out of 5796532
- 1863388 words of memory out of 5000000
- 32505 multiletter control sequences out of 15000+600000
- 520765 words of font info for 52 fonts, out of 8000000 for 9000
+ 12314 strings out of 476025
+ 199634 string characters out of 5796532
+ 1865388 words of memory out of 5000000
+ 32600 multiletter control sequences out of 15000+600000
+ 521541 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,77p,745b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,11n,77p,745b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/font
-s/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/
-cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm12
-00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.pdf (2 pages, 459826 b
+texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm10
+00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfrm1728.pfb>
+Output written on nwt2ue4_Thomas_Brandstetter_Jakob_Mayr.pdf (2 pages, 477691 b
 ytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
+ 97 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
