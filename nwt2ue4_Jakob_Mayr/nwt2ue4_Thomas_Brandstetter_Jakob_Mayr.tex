@@ -110,8 +110,14 @@ Für die Konfiguration des Gruppenrouters wurde der Port GigabitEthernet0/0 verw
 
 \section{Fragen zur Konfiguration}
 
-\subsection*{Frage 4.1 \normalfont Warum sind verschiedene VLANs im selben IP Netz nicht sinnvoll}
-Da die Eigenschaften von IP-Netzen standardmäßig vorsehen, dass IP-Adressen untereinander „direkt“ kommunizieren können ergibt es keinen Sinn ein Netz in VLANs aufzuteilen. Möchte man eine granularere Einteilung kann man das Netz auch in Subnetze trennen.
+\subsection*{Frage 4.1 \normalfont Warum sind verschiedene VLANs im selben IP Netz nicht sinnvoll?}
+Es ergeben sich folgende Probleme:
+\begin{itemize}
+\item Gibt es verschiedene VLANs in einem IP-Netz, so würde dies bedeuten, dass Geräte in unterschiedlichen VLANs die gleichen IP-Adressen verwenden. Dadurch kann es zu Konflikten bei der Addresszuweisung und unvorhersehbarem Verhalten im Netzwerk kommen.
+\item VLANs im selben IP-Netzwerk beeinträchtigen Isolierung und Sicherheit. Ein Hauptvorteil von VLANs besteht darin, dass sie es ermöglichen, den Datenverkehr zwischen den VLANs zu kontrollieren und zu beschränken. Durch das Zusammenfassen von VLANs in einem gemeinsamen IP-Netzwerk würde dies jedoch bedeuten, dass Geräte in unterschiedlichen VLANs direkt miteinander kommunizieren können, ohne dass die gewünschten Sicherheitsmaßnahmen greifen.
+\end{itemize}
+Insgesamt ist es empfehlenswert, VLANs und IP-Netzwerke getrennt voneinander zu planen und zu konfigurieren, um eine klare Segmentierung, bessere Kontrolle und Sicherheit im Netzwerk zu gewährleisten.
+
 
 \subsection*{Frage 4.2 \normalfont Warum müssen auf den Subinterfaces die VLANs bekannt gegeben werden? Warum muss der angeschlossene Switch Port ein Trunk Port sein?}
 Standardmäßig würde ein Port im „trunk mode“ alle VLANs routen, da die Aufgabenstellung allerdings verlangt, dass nur bestimmte VLANs geroutet werden können, müssen diese explizit angegeben werden. Ein Trunk Port wird benötigt, damit über diesen Port Netzwerkverkehr von mehreren VLANs geroutet werden können.
