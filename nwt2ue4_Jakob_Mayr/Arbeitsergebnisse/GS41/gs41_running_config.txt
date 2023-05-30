@@ -92,9 +92,11 @@ interface FastEthernet0/24
 !
 interface GigabitEthernet0/1
  switchport mode trunk
+ switchport trunk allowed vlan 41,45
 !
 interface GigabitEthernet0/2
  switchport mode trunk
+ switchport trunk allowed vlan 42,45
 !
 interface Vlan1
  no ip address
