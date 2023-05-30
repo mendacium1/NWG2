@@ -13,8 +13,8 @@
 \usepackage{booktabs}
 
 
-\title{Übungsprotokoll - NWT2 - Übung 03}
-\author{\vspace{0.5cm} \Large VLANS\\ Thomas Brandstätter (s2210239002) \& Jakob Mayr (s2210239021)}
+\title{Übungsprotokoll - NWT2 - Übung 03 \\ VLANS}
+\author{\vspace{0.5cm} Thomas Brandstätter (s2210239002) \& Jakob Mayr (s2210239021)}
 
 \begin{document}
 \maketitle
@@ -57,16 +57,16 @@ Die Ports für die Clients wurden mit dem "access mode" für die VLANS 41 bzw. 4
         \toprule
         \textbf{Befehl} & \textbf{Erklärung} \\
         \midrule
-        switchport access vlan <vlan-tag-numbers> & Mit diesem Befehl wird ein Switchport im "access mode" einem oder mehreren VLANS zugeordnet. \\
+        switchport access vlan <vlan-tag-numbers> & Mit diesem Befehl wird ein Switchport im „access mode“ einem oder mehreren VLANS zugeordnet. \\
         \hline
-        switchport mode access & Mit diesem Befehl wird ein switchport in den "access omde" gesetzt. \\
+        switchport mode access & Mit diesem Befehl wird ein switchport in den „access mode“ gesetzt. \\
         \bottomrule
     \end{tabularx}
     \caption{Verwendete Befehle der Switchports für die Clients}
     \label{tab:commands}
 \end{table}
 
-Die Ports für den Backbone-Switch und den Gruppenrouter wurden mit dem "trunk mode" konfiguriert und haben daher keine zugehörige VLAN-Konfiguration.
+Die Ports für den Backbone-Switch und den Gruppenrouter wurden mit dem „trunk mode“ konfiguriert und haben daher keine zugehörige VLAN-Konfiguration.
 
 \begin{table}[htbp]
     \centering
@@ -74,11 +74,10 @@ Die Ports für den Backbone-Switch und den Gruppenrouter wurden mit dem "trunk m
         \toprule
         \textbf{Befehl} & \textbf{Erklärung} \\
         \midrule
-        switchport mode trunk & Mit diesem Befehl wird ein switchport in den "trunk mode" gesetzt. \\
+        switchport mode trunk & Mit diesem Befehl wird ein switchport in den „trunk mode“ gesetzt. \\
         \bottomrule
     \end{tabularx}
     \caption{Verwendete Befehle der Switchports für Backbone und Router}
-    \label{tab:commands}
 \end{table}
 
 \subsection{Konfiguration der Gruppenrouter}
