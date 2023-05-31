@@ -120,13 +120,16 @@ Insgesamt ist es empfehlenswert, VLANs und IP-Netzwerke getrennt voneinander zu 
 
 
 \subsection*{Frage 4.2 \normalfont Warum müssen auf den Subinterfaces die VLANs bekannt gegeben werden? Warum muss der angeschlossene Switch Port ein Trunk Port sein?}
-Standardmäßig würde ein Port im „trunk mode“ alle VLANs routen, da die Aufgabenstellung allerdings verlangt, dass nur bestimmte VLANs geroutet werden können, müssen diese explizit angegeben werden. Ein Trunk Port wird benötigt, damit über diesen Port Netzwerkverkehr von mehreren VLANs geroutet werden können.
+Die VLAN-IDs müssen auf den Subinterfaces bekannt gegeben werden, 
+um den Datenverkehr zu kennzeichnen, der über ein spezifisches VLAN fließen soll. Jedes Subinterface wird in der Regel mit einer bestimmten VLAN-ID konfiguriert, was dem Router ermöglicht, den Datenverkehr
+ basierend auf diesen VLAN-IDs zu unterscheiden und korrekt zu routen. Standardmäßig würde ein Port im „trunk mode“ alle VLANs routen, da die Aufgabenstellung allerdings verlangt, dass nur bestimmte VLANs geroutet werden können, müssen diese explizit angegeben werden.\\
+Ein Trunk Port wird benötigt, damit über diesen Port Netzwerkverkehr von mehreren VLANs geroutet werden können.
 
 \subsection*{Frage 4.3 \normalfont Könnte eine Anbindung der Gruppenrouter auch ohne Subinterfaces funktionieren? Wenn ja, wie?}
 Man könnte alternativ auch für jedes VLAN ein eigenes Interface verwenden, da ein Router allerdings eine begrenzte Anzahl von Ports hat, ist dies nicht sinnvoll.
 
 \subsection*{Frage 4.4 \normalfont Warum ist hier das anlegen der Default Routen nötig? Welche Erreichbarkeiten sind nur so sicherzustellen.}
-Um beispielsweise von dem Client PC42 auf den next-hop zu kommen müssen Default-Routen angelegt werden. Der Client hat als Gateway den GR41 angegeben und muss somit von diesem weitergeroutet werden.
+Um beispielsweise von dem Client PC42 auf den next-hop, in diesem Fall der Backbone Router, zu kommen müssen Default-Routen angelegt werden. Der Client hat als Gateway den GR41 (Gruppenrouter) angegeben und muss somit von diesem weitergeroutet werden.
 
 
 \subsection*{Frage 4.5 \normalfont Wie wirken sich Trunk Ports auf die Source Address Table aus? Warum ändert sich die Source Address Table im Lauf der Zeit?}
