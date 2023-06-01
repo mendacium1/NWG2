@@ -114,7 +114,8 @@ Für die Konfiguration des Gruppenrouters wurde der Port GigabitEthernet0/0 verw
 Es ergeben sich folgende Probleme:
 \begin{itemize}
 \item Da alle VLANs denselben IP-Bereich verwenden, kann es zu IP-Adresskonflikten kommen. Zwei oder mehr Geräte auf verschiedenen VLANs könnten versuchen, dieselbe IP-Adresse zu verwenden, was zu Konflikten und Kommunikationsproblemen führt.
-\item Wenn alle VLANs denselben IP-Bereich verwenden, kann es schwierig sein, Netzwerkprobleme zu diagnostizieren und zu beheben. Da die IP-Adressen nicht eindeutig sind, kann es schwierig sein, festzustellen, welche Geräte Probleme verursachen oder welche Geräte betroffen sind.
+\item Wenn alle VLANs denselben IP-Bereich verwenden, kann der Router nicht effektiv feststellen, an welches VLAN er den Datenverkehr senden soll, was zu Fehlleitungen und möglicherweise zu Verbindungsabbrüchen führt.\\
+Wenn alle VLANs denselben IP-Bereich verwenden, kann es schwierig sein, Netzwerkprobleme zu diagnostizieren und zu beheben. Da die IP-Adressen nicht eindeutig sind, kann es schwierig sein, festzustellen, welche Geräte Probleme verursachen oder welche Geräte betroffen sind.
 \end{itemize}
 Insgesamt ist es empfehlenswert, VLANs und IP-Netzwerke getrennt voneinander zu planen und zu konfigurieren, um eine klare Segmentierung, bessere Kontrolle und Sicherheit im Netzwerk zu gewährleisten.
 
