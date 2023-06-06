@@ -95,7 +95,12 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
 \section{Fragen zur Konfiguration}
 
 \subsection*{Frage 5.1 \normalfont Warum können ohne die Link Aggregation (das Erstellen der Channel Group) nicht beide Links verwendet werden?}
-...\\
+Ohne Link Aggregation, auch bekannt als Port Trunking oder EtherChannel, würden die beiden parallelen Fast Ethernet Verbindungen als separate, unabhängige Links betrachtet werden. Dies kann zu mehreren Problemen führen:
+
+- Ungleichmäßige Lastverteilung: Ohne Link Aggregation wäre es schwierig, den Datenverkehr gleichmäßig über die beiden Links zu verteilen. In der Regel würde ein Switch den Datenverkehr über einen Link senden, bis dieser voll ist, und dann erst den anderen Link verwenden. Dies führt zu einer ineffizienten Nutzung der verfügbaren Bandbreite.
+
+- Fehlende Redundanz und Ausfallsicherheit: Ohne Link Aggregation, wenn ein Link ausfällt, würde der Datenverkehr, der über diesen Link fließt, unterbrochen werden, bis der Switch den Ausfall erkennt und auf den anderen Link umschaltet. Mit Link Aggregation würde der Datenverkehr einfach über den verbleibenden Link weitergeleitet werden, wenn ein Link ausfällt, was zu einer höheren Ausfallsicherheit führt.
+\\
 
 \subsection*{Frage 5.2 \normalfont Wie kann durch ein geeignetes Load Balancing sichergestellt werden, dass beide Rechner mit voller Geschwindigkeit bediengt werden?}
 ...\\
