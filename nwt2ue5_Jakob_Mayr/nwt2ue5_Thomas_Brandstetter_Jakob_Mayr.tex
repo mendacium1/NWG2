@@ -141,10 +141,31 @@ Hierzu müssen zuerst auf beiden Switches ein Port-Channel (1) mit dem load-bala
         channel-group <number> mode <aktiv/passive> & Mit diesem Befehl wird auf dem jeweiligen Interface die channel-group in dem spezifizierten Modus konfiguriert.\\
         \bottomrule
     \end{tabularx}
-    \caption{Verwendete Befehle zur Konfiguration der Gruppenswitches}
+    \caption{Verwendete Befehle zur Konfiguration der Gruppenswitches (Link-Aggregation)}
     \label{tab:commands}
 \end{table}
-\noindent notes...
+
+\subsection{Mirror-Port}
+
+Zuletzt soll auf dem Gruppenswitch GS41 noch ein Mirror-Port eingerichtet werden. Dieser soll als Eingangsport den Port-Channel der zuvor konfigurierten Channel-Group und als Ausgangsport den Port an dem der linke PC41 hängt haben.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \toprule
+        \textbf{Befehl} & \textbf{Erklärung} \\
+        \midrule
+        monitor session <number> source interface <interface-name> & Mit diesem Befehl wird der Eingangsport für den Mirror-Port bestimmt.\\
+        \hline
+        monitor session <number> destination interface <interface-name> & Mit diesem Befehl wird der Ausgangsport für den Mirror-Port bestimmt.\\
+        \hline
+        channel-group <number> mode <aktiv/passive> & Mit diesem Befehl wird auf dem jeweiligen Interface die channel-group in dem spezifizierten Modus konfiguriert.\\
+        \bottomrule
+    \end{tabularx}
+    \caption{Verwendete Befehle zur Konfiguration des Mirror-Ports}
+    \label{tab:commands}
+\end{table}
+
 
 \section{Fragen zur Konfiguration}
 
