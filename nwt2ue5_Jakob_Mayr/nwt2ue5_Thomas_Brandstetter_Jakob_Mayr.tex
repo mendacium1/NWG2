@@ -104,7 +104,7 @@ Für die ACL des rechten PCs wird jeder ICMP Traffik belockt.\\
     \label{tab:commands}
 \end{table}
 
-\noident Damit die ACLs nun auch vom Router verwendet werden müssen sie noch den jeweiligen Interfaces hinzugefügt werden.\\
+\noindent Damit die ACLs nun auch vom Router verwendet werden können, müssen sie noch den jeweiligen Interfaces hinzugefügt werden.\\
 
 \begin{table}[htbp]
     \centering
@@ -121,7 +121,12 @@ Für die ACL des rechten PCs wird jeder ICMP Traffik belockt.\\
     \label{tab:commands}
 \end{table}
 
-...\\
+\pagebreak
+
+\section{Konfiguration der Gruppenswitches}
+
+Für die Konfiguration der Gruppenswitches ist eine Link-Aggregation zu konfigurieren.\\
+Hierzu müssen zuerst auf beiden Switches ein Port-Channel (1) mit dem load-balancing-mode angelegt werden. Anschließend müssen auf den jeweiligen Interfaces das channel-protocol (lacp) und die channel-group (1) im mode aktiv angelegt werden.\\
 
 \begin{table}[htbp]
     \centering
@@ -129,9 +134,11 @@ Für die ACL des rechten PCs wird jeder ICMP Traffik belockt.\\
         \toprule
         \textbf{Befehl} & \textbf{Erklärung} \\
         \midrule
-        ... & ...\\
+        port-channel load-balance <load-balancind-mode> & Mit diesem Befehl wird ein Port-Channel mit dem jeweiligen load-balancing-mode konfiguriert. (Für diese Aufgabe funktioniert der "src-dst-ip" mode, da bei diesem der Traffik der beiden Clients klar von einander getrennt werden kann. Anders könnte der Traffik nicht auf zwei Interfaces aufgeteilt werden.)\\
         \hline
-        ... & ...\\
+        channel-protocol <protocol> & Mit diesem Befehl wird auf dem jeweiligen Interface das channel-protocol spezifiziert. (Für diese Aufgabe das lacp - link aggregation control protocol.)\\
+        \hline
+        channel-group <number> mode <aktiv/passive> & Mit diesem Befehl wird auf dem jeweiligen Interface die channel-group in dem spezifizierten Modus konfiguriert.\\
         \bottomrule
     \end{tabularx}
     \caption{Verwendete Befehle zur Konfiguration der Gruppenswitches}

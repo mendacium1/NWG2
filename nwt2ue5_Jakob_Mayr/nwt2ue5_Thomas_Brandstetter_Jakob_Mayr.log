@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.5.26)  7 JUN 2023 22:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.5.26)  7 JUN 2023 22:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,7 +372,14 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count296
 \l__pdf_internal_box=\box55
 )
-(./nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.aux)
+(./nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.aux
+
+LaTeX Warning: Label `tab:commands' multiply defined.
+
+
+LaTeX Warning: Label `tab:commands' multiply defined.
+
+)
 \openout1 = `nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -521,43 +528,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--83
 
  []
 
-! Undefined control sequence.
-l.107 \noident
-               Damit die ACLs nun auch vom Router verwendet werden müssen s...
-
-? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-
- []
-
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+[]|\T1/cmr/m/n/10 port-channel load-balance <load-balancind-
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 143--143
+\T1/cmr/m/n/10 dem je-wei-li-gen load-balancing-mode kon-fi-gu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+[]|\T1/cmr/m/n/10 channel-group <num-ber> mo-de <ak-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
-[3]
+
 Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
@@ -567,64 +584,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--168
 File: Arbeitsergebnisse/GS41/GS41_etherchannel.png Graphic file (type png)
 <use Arbeitsergebnisse/GS41/GS41_etherchannel.png>
 Package pdftex.def Info: Arbeitsergebnisse/GS41/GS41_etherchannel.png  used on 
-input line 177.
+input line 184.
 (pdftex.def)             Requested size: 199.60895pt x 72.29398pt.
 
-Underfull \hbox (badness 4328) in paragraph at lines 178--178
+Underfull \hbox (badness 4328) in paragraph at lines 185--185
 []\T1/cmr/m/n/10 Abbildung 5: |GS41 Ether-Chan-nel Load-
  []
 
 File: Arbeitsergebnisse/GS41/GS41_etherchannel.png Graphic file (type png)
 <use Arbeitsergebnisse/GS41/GS41_etherchannel.png>
 Package pdftex.def Info: Arbeitsergebnisse/GS41/GS41_etherchannel.png  used on 
-input line 182.
+input line 189.
 (pdftex.def)             Requested size: 199.60895pt x 72.29398pt.
 
-Underfull \hbox (badness 4328) in paragraph at lines 183--183
+Underfull \hbox (badness 4328) in paragraph at lines 190--190
 []\T1/cmr/m/n/10 Abbildung 6: |GS41 Ether-Chan-nel Load-
  []
 
 [5 <./Arbeitsergebnisse/GS41/gs41_etherchannel.png>]
-<Arbeitsergebnisse/PC41/pc41_ping_pc42.png, id=87, 334.75063pt x 364.86313pt>
+<Arbeitsergebnisse/PC41/pc41_ping_pc42.png, id=86, 334.75063pt x 364.86313pt>
 File: Arbeitsergebnisse/PC41/pc41_ping_pc42.png Graphic file (type png)
 <use Arbeitsergebnisse/PC41/pc41_ping_pc42.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC41/pc41_ping_pc42.png  used on inp
-ut line 193.
+ut line 200.
 (pdftex.def)             Requested size: 110.8946pt x 120.87285pt.
-<Arbeitsergebnisse/PC41/pc41_ping_failed.png, id=88, 387.94937pt x 312.66812pt>
+<Arbeitsergebnisse/PC41/pc41_ping_failed.png, id=87, 387.94937pt x 312.66812pt>
 
 File: Arbeitsergebnisse/PC41/pc41_ping_failed.png Graphic file (type png)
 <use Arbeitsergebnisse/PC41/pc41_ping_failed.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC41/pc41_ping_failed.png  used on i
-nput line 198.
+nput line 205.
 (pdftex.def)             Requested size: 110.8946pt x 89.37373pt.
-<Arbeitsergebnisse/PC41/pc41_ftp.png, id=89, 498.86375pt x 349.80687pt>
+<Arbeitsergebnisse/PC41/pc41_ftp.png, id=88, 498.86375pt x 349.80687pt>
 File: Arbeitsergebnisse/PC41/pc41_ftp.png Graphic file (type png)
 <use Arbeitsergebnisse/PC41/pc41_ftp.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC41/pc41_ftp.png  used on input lin
-e 203.
+e 210.
 (pdftex.def)             Requested size: 110.8946pt x 77.75839pt.
-<Arbeitsergebnisse/PC42/pc42_ping_PC41.png, id=90, 736.25063pt x 384.43625pt>
+<Arbeitsergebnisse/PC42/pc42_ping_PC41.png, id=89, 736.25063pt x 384.43625pt>
 File: Arbeitsergebnisse/PC42/pc42_ping_PC41.png Graphic file (type png)
 <use Arbeitsergebnisse/PC42/pc42_ping_PC41.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC42/pc42_ping_PC41.png  used on inp
-ut line 213.
+ut line 220.
 (pdftex.def)             Requested size: 110.8946pt x 57.90344pt.
-<Arbeitsergebnisse/PC42/pc42_ping_failed.png, id=91, 736.25063pt x 384.43625pt>
+<Arbeitsergebnisse/PC42/pc42_ping_failed.png, id=90, 736.25063pt x 384.43625pt>
 
 File: Arbeitsergebnisse/PC42/pc42_ping_failed.png Graphic file (type png)
 <use Arbeitsergebnisse/PC42/pc42_ping_failed.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC42/pc42_ping_failed.png  used on i
-nput line 218.
+nput line 225.
 (pdftex.def)             Requested size: 110.8946pt x 57.90344pt.
-<Arbeitsergebnisse/PC42/pc42_ftp.png, id=92, 676.5275pt x 384.43625pt>
+<Arbeitsergebnisse/PC42/pc42_ftp.png, id=91, 676.5275pt x 384.43625pt>
 File: Arbeitsergebnisse/PC42/pc42_ftp.png Graphic file (type png)
 <use Arbeitsergebnisse/PC42/pc42_ftp.png>
 Package pdftex.def Info: Arbeitsergebnisse/PC42/pc42_ftp.png  used on input lin
-e 223.
+e 230.
 (pdftex.def)             Requested size: 110.8946pt x 63.01276pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--224
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
 []\T1/cmr/m/n/10 Abbildung 12: |PC42
  []
 
@@ -634,54 +651,31 @@ PC42/pc42_ping_pc41.png> <./Arbeitsergebnisse/PC42/pc42_ping_failed.png> <./Arb
 eitsergebnisse/PC42/pc42_ftp.png>]
 (./nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.ou
-t' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `nwt2ue5_Thomas_Brandstetter_Jakob_M
-ayr.out':
-(rerunfilecheck)             Before: 08F1F9984ADDA3FADB523B12E7F848ED;1311
-(rerunfilecheck)             After:  46C75C9C9FB09C71CD2C76D613A0788E;1097.
+Package rerunfilecheck Info: File `nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.out' 
+has not changed.
+(rerunfilecheck)             Checksum: 08F1F9984ADDA3FADB523B12E7F848ED;1311.
  ) 
 Here is how much of TeX's memory you used:
- 12383 strings out of 476025
- 201887 string characters out of 5796532
+ 12380 strings out of 476025
+ 201845 string characters out of 5796532
  1865388 words of memory out of 5000000
  32642 multiletter control sequences out of 15000+600000
  521541 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,77p,745b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-pdfTeX warning (dest): name{subsection.5.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5} has been referenced but does not exist, 
-replaced by a fixed one
-
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
-xmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/
-type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm
--super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000
-.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.pdf (6 pages, 781489 b
+ 75i,11n,77p,745b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
+texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm10
+00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
+Output written on nwt2ue5_Thomas_Brandstetter_Jakob_Mayr.pdf (6 pages, 782709 b
 ytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 143 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
  120 words of extra memory for PDF output out of 10000 (max. 10000000)
 
