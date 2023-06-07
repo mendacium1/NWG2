@@ -97,7 +97,7 @@ ip access-list extended blockIncomingLeftv4
  deny   ip host 185.252.73.145 host 185.252.73.49
  permit ip any any
 ip access-list extended blockIncomingRightv4
- deny   icmp host 185.252.73.58 any
+ deny icmp host 185.252.73.58 any
  permit ip any any
 !
 ipv6 route ::/0 FD00:1000::F

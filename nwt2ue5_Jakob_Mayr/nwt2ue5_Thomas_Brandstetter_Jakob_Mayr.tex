@@ -52,7 +52,9 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
 
 \section{Konfiguration des Gruppenrouters}
 
-...\\
+Für die Konfiguration des Gruppenrouters müssen die Interfaces GigabitEthernet0/0 und GigabitEthernet0/1 mit einer IPv4 und einer IPv6 Adressen versehen werden. Ebenfalls muss dafür ipv6-unicast-routing aktiviert werden.\\
+Als Default-Gateway wird sowohl für IPv4 als auch für IPv6 der Backbone-Router angegeben.\\
+
 
 \begin{table}[htbp]
     \centering
@@ -60,19 +62,64 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
         \toprule
         \textbf{Befehl} & \textbf{Erklärung} \\
         \midrule
-        ... & ...\\
+        ip address <ip-address> <ip-address-mask> & Mit diesem Befehl wird auf einem Interface eine IPv4 Adresse mit der zugehörigen Maske konfiguriert.\\
         \hline
-        ... & ...\\
+        ipv6 address <ipv6-address/ipv6-address-mask> & Mit diesem Befehl wird auf einem Interface eine IPv6 Adresse mit der zugehörigen Maske konfiguriert.\\
+        \hline
+        ip route <network-number> <network-mask> <ip-address|interface> & Mit diesem Befehl wird eine statische IPv4 Route angelegt.\\
+        \hline
+        ipv6 route <network-number/network-mask> <ipv6-address|interface> & Mit diesem Befehl wird eine statische IPv6 Route angelegt.\\
+        \hline
+        ipv6-unicast-routing & Mit diesem Befehl wird das unicast-routing für IPv6 aktiviert.\\
         \bottomrule
     \end{tabularx}
     \caption{Verwendete Befehle zur Konfiguration des Gruppenrouters}
 \end{table}
 
-\noindent notes...
+\noindent Als nächstes müssen auf dem Router die notwendigen ACLs (access-control-lists) konfiguriert werden.\\
+Hierfür soll sowohl jeder eingehende Traffic von den PCx1's zu PC41, als auch jeder eingehende ICMP Traffic zu PC42 belockt werden.\\
+Für die ACL der linken PCs werden die Adressen der PCx1's einzeln in einer IPv4 und einer IPv6 ACL geblockt.\\
+Für die ACL des rechten PCs wird jeder ICMP Traffik belockt.\\
 
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \toprule
+        \textbf{Befehl} & \textbf{Erklärung} \\
+        \midrule
+        ip access-list extended <ACL-name> & Mit diesem Befehl wird eine ACL für IPv4 angelegt.\\
+        \hline
+        ip access-list extended <ACL-name> & Mit diesem Befehl wird eine ACL für IPv6 angelegt.\\
+        \hline
+        deny ip host <src-ip-address> host <dest-ip-address> & Mit diesem Befehl wird der Traffik von der src-ip-Adresse zur dest-ip-Adresse geblockt.\\ 
+        \hline
+        deny ipv6 host <src-ipv6-address> host <dest-ipv6-address> & Mit diesem Befehl wird der Traffik von der src-ipv6-Adresse zur dest-ipv6-Adresse geblockt.\\
+        \hline
+        deny icmp host <ipv4/ipv6-address> any & Mit diesem Befehl wird jeder eingehende icmp auf die angegebene Adresse geblockt.\\
+        \hline
+        permit ip any any / ipv6 permint any any & Diese Befehle müssen am Ende einer ACL hinzugefügt werden, da die Regeln Schritt-für-Schritt abgearbeitet werden und Traffik per-default geblockt wird. Nur mit dieser Regel wird der Traffik welcher von keiner vorherigen Regel geblockt oder speziell erlaubt wird durchgelassen.\\ 
+        \bottomrule
+    \end{tabularx}
+    \caption{Verwendete Befehle zum anlegen der ACLs}
+    \label{tab:commands}
+\end{table}
 
+\noident Damit die ACLs nun auch vom Router verwendet werden müssen sie noch den jeweiligen Interfaces hinzugefügt werden.\\
 
-\section{Konfiguration der Gruppenswitches}
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \toprule
+        \textbf{Befehl} & \textbf{Erklärung} \\
+        \midrule
+        ip access-group <ACL-name> in & Mit diesem Befehl wird eine IPv4-ACL einem Interface hinzugefügt.\\
+        \hline
+        ipv6 traffic-filter <ACL-name> in & Mit diesem Befehl wird eine IPv6-ACL einem Interface hinzugefügt.\\
+        \bottomrule
+    \end{tabularx}
+    \caption{Verwendete Befehle zum hinzufügen der ACLs zu den Interfaces.}
+    \label{tab:commands}
+\end{table}
 
 ...\\
 
