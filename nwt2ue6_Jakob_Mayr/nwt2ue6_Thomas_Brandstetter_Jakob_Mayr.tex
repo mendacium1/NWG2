@@ -21,28 +21,18 @@
 
 \section{Konfiguration der Endsysteme}
 
-In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Netze 4.x verwendet worden. Die IP-Konfiguration wird folgendermaßen vergeben: Klick auf „Network“ in der Taskleiste $\rightarrow$ „Network \& Internet Settings“ $\rightarrow$ „Change adapter options“ $\rightarrow$ gewünschtes Netzwerk Interface auswählen, in diesem Fall Ethernet 2 $\rightarrow$ „Properties“ $\rightarrow$ Doppelklick auf „Internet Protocol Version 4“ bzw. „Internet Protocol Version 6“. In den geöffneten Fenstern können wir nun jeweils die IP-Adresse, Subnetzmaske/Präfix und das Gateway eingeben. Folglich sind die Konfigurationen beider PCs zu sehen:
+In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Netze 4.x verwendet worden. Die IP-Konfiguration wird folgendermaßen vergeben: Klick auf „Network“ in der Taskleiste $\rightarrow$ „Network \& Internet Settings“ $\rightarrow$ „Change adapter options“ $\rightarrow$ gewünschtes Netzwerk Interface auswählen, in diesem Fall Ethernet 2 $\rightarrow$ „Properties“ $\rightarrow$ Doppelklick auf „Internet Protocol Version 4“ bzw. „Internet Protocol Version 6“. In den geöffneten Fenstern können wir nun jeweils die IP-Adresse, Subnetzmaske/Präfix und das Gateway eingeben (Bei dieser Übung benötigt es kein Default-Gateway, da alle Geräte im selben Netz sind). Folglich sind die Konfigurationen beider PCs zu sehen:
 
 \begin{figure}[!htp]
   \centering
-  \begin{minipage}[b]{0.2\textwidth}
-    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_IPv4_config.png}
-    \caption{PC41 IPv4 config}
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/pc41/pc41_ip_config.png}
+    \caption{PC41 IPv4 und IPv6 config}
   \end{minipage}
   \hspace{0.8cm}
-  \begin{minipage}[b]{0.2\textwidth}
-    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC41/pc41_IPv6_config.png}
-    \caption{PC41 IPv6 config}
-  \end{minipage}
-  \hspace{0.8cm}
-  \begin{minipage}[b]{0.2\textwidth}
-    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC42/pc42_IPv4_config.png}
-    \caption{PC42 IPv4 config}
-  \end{minipage}
-  \hspace{0.8cm}
-  \begin{minipage}[b]{0.2\textwidth}
-    \includegraphics[width=\textwidth]{Arbeitsergebnisse/PC42/pc42_IPv6_config.png}
-    \caption{PC42 IPv6 config}
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Arbeitsergebnisse/pc42/pc42_ip_config.png}
+    \caption{PC42 IPv4 und IPv6 config}
   \end{minipage}
 \end{figure}
 
@@ -50,9 +40,11 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
 
 
 
-\section{Konfiguration des Gruppenrouters}
+\section{Konfiguration der Gruppenswitches}
 
-...\\
+\subsection{Konfigurieren der VLANs}
+
+Auf den Switches wird sollen die VLANs 1 und 50 verwendet werden. VLAN 1 \\
 
 \begin{table}[htbp]
     \centering
@@ -95,7 +87,7 @@ In der folgenden Übung haben wir die PCs 4.1 und 4.2 benutzt, somit sind die Ne
 \section{Fragen zur Konfiguration}
 
 \subsection*{Frage 6.1 \normalfont Warum muss das VLAN 1 nicht angelegt werden?}
-...\\
+Da es bereits existiert.\\
 
 \subsection*{Frage 6.2 \normalfont Was ist die Funktion PortFast und wozu dient sie?}
 ...\\
