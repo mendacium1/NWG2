@@ -171,28 +171,31 @@ Zuletzt soll auf dem Gruppenswitch GS41 noch ein Mirror-Port eingerichtet werden
 
 \subsection*{Frage 5.1 \normalfont Warum können ohne die Link Aggregation (das Erstellen der Channel Group) nicht beide Links verwendet werden?}
 Ohne Link Aggregation, auch bekannt als Port Trunking oder EtherChannel, würden die beiden parallelen Fast Ethernet Verbindungen als separate, unabhängige Links betrachtet werden. Dies kann zu mehreren Problemen führen:
+\begin{itemize}
+  \item Ungleichmäßige Lastverteilung: Ohne Link Aggregation wäre es schwierig, den Datenverkehr gleichmäßig über die beiden Links zu verteilen. In der Regel würde ein Switch den Datenverkehr über einen Link senden, bis dieser voll ist, und dann erst den anderen Link verwenden. Dies führt zu einer ineffizienten Nutzung der verfügbaren Bandbreite.\\
 
-- Ungleichmäßige Lastverteilung: Ohne Link Aggregation wäre es schwierig, den Datenverkehr gleichmäßig über die beiden Links zu verteilen. In der Regel würde ein Switch den Datenverkehr über einen Link senden, bis dieser voll ist, und dann erst den anderen Link verwenden. Dies führt zu einer ineffizienten Nutzung der verfügbaren Bandbreite.
+  \item Fehlende Redundanz und Ausfallsicherheit: Ohne Link Aggregation, wenn ein Link ausfällt, würde der Datenverkehr, der über diesen Link fließt, unterbrochen werden, bis der Switch den Ausfall erkennt und auf den anderen Link umschaltet. Mit Link Aggregation würde der Datenverkehr einfach über den verbleibenden Link weitergeleitet werden, wenn ein Link ausfällt, was zu einer höheren Ausfallsicherheit führt.\\
+\end{itemize}
 
-- Fehlende Redundanz und Ausfallsicherheit: Ohne Link Aggregation, wenn ein Link ausfällt, würde der Datenverkehr, der über diesen Link fließt, unterbrochen werden, bis der Switch den Ausfall erkennt und auf den anderen Link umschaltet. Mit Link Aggregation würde der Datenverkehr einfach über den verbleibenden Link weitergeleitet werden, wenn ein Link ausfällt, was zu einer höheren Ausfallsicherheit führt.\\
-
-\subsection*{Frage 5.2 \normalfont Wie kann durch ein geeignetes Load Balancing sichergestellt werden, dass beide Rechner mit voller Geschwindigkeit bediengt werden?}
+\subsection*{Frage 5.2 \normalfont Wie kann durch ein geeignetes Load Balancing sichergestellt werden, dass beide Rechner mit voller Geschwindigkeit bedient werden?}
 Dies kann erreicht werden, indem man beispielsweise das Load Balancing so konfiguriert, dass es auf der Basis der Quell- und Ziel-IP-Adressen und/oder Portnummern arbeitet. Auf diese Weise würde der Verkehr von und zu den beiden verschiedenen Rechnern wahrscheinlich auf die beiden verschiedenen Links verteilt werden, was dazu beitragen würde, dass beide Rechner mit voller Geschwindigkeit bedient werden.\\
 
 \subsection*{Frage 5.3 \normalfont Wenn Gruppe A die ACLs bereits fertig konfiguriert hat, Gruppe B aber nicht, wie wirkt sich das auf Ping zwischen den linken PCs aus? Falls es nicht geht, welche Fehlermeldungen erscheinen wann?}
-In diesem Szenario, wenn Gruppe A ihre ACLs so konfiguriert hat, dass jeglicher Traffic von den anderen linken PCs (PCx1) auf den eigenen linken PC am Routerinterface Gi0/0 eingehend geblockt wird, und jeglicher ICMP Traffic (Ping) vom eigenen rechten PC auf alle anderen Geräte am Routerinterface Gi0/1 eingehend geblockt wird, dann wird jeglicher Ping-Verkehr, der von den PCs der Gruppe A ausgeht, blockiert.
+In diesem Szenario, wenn Gruppe A ihre ACLs so konfiguriert hat, dass jeglicher Traffic von den anderen linken PCs (PCx1) auf den eigenen linken PC am Routerinterface Gi0/0 eingehend geblockt wird, und jeglicher ICMP Traffic (Ping) vom eigenen rechten PC auf alle anderen Geräte am Routerinterface Gi0/1 eingehend geblockt wird, dann wird jeglicher Ping-Verkehr, der von den PCs der Gruppe A ausgeht, blockiert.\\
 
-Wenn Gruppe B ihre ACLs jedoch nicht konfiguriert hat, dann gibt es auf ihrer Seite keine Beschränkungen für den Netzwerkverkehr. Das bedeutet, dass Ping-Verkehr von den PCs der Gruppe B zu den PCs der Gruppe A möglich ist, aber die Antworten von den PCs der Gruppe A werden aufgrund der ACLs der Gruppe A blockiert.
+\noindent Wenn Gruppe B ihre ACLs jedoch nicht konfiguriert hat, dann gibt es auf ihrer Seite keine Beschränkungen für den Netzwerkverkehr. Das bedeutet, dass Ping-Verkehr von den PCs der Gruppe B zu den PCs der Gruppe A möglich ist, aber die Antworten von den PCs der Gruppe A werden aufgrund der ACLs der Gruppe A blockiert.\\
 
-In Bezug auf Fehlermeldungen, wenn ein Ping-Versuch durchgeführt wird und die Antwort blockiert wird, wird in der Regel eine „Request timed out“ oder „Destination host unreachable“ Nachricht angezeigt. Dies zeigt an, dass der Ping-Request nicht erfolgreich war, weil keine Antwort vom Ziel-PC empfangen wurde.\\
+\noindent In Bezug auf Fehlermeldungen, wenn ein Ping-Versuch durchgeführt wird und die Antwort blockiert wird, wird in der Regel eine „Request timed out“ oder „Destination host unreachable“ Nachricht angezeigt. Dies zeigt an, dass der Ping-Request nicht erfolgreich war, weil keine Antwort vom Ziel-PC empfangen wurde.\\
+
+\pagebreak
 
 \subsection*{Frage 5.4 \normalfont Wie wirken sich die ACLs auf den Kontakt zum FTP Server aus, und warum?} 
-...\\
+Da die ACL einerseits den Traffik von anderen Clients (PCx1) und andererseits ICMP Traffik sperren, haben sie keine Auswirkung auf den Kontakt zum FTP Server. Wichtig ist dafür jedoch die „permit ip any any“ regel am Ende der ACL.\\
 
-\subsection*{Frage 5.5 \normalfont Was bedeutet es für denk linken PC, dass er an einem Mirror Port hängt? Wie wirkt sich das auf seine Kommunkationsfähigkeit aus? Welche ports sollten für einen Mirror Port verwendet werden und warum?}
-Wenn der linke PC an einem Mirror Port hängt, bedeutet das, dass er eine Kopie des Netzwerkverkehrs von den Quellports empfängt. Dies sollte seine normale Kommunikationsfähigkeit nicht beeinflussen - er kann immer noch Netzwerkverkehr senden und empfangen wie gewohnt. Der Unterschied ist, dass er zusätzlich eine Kopie des Netzwerkverkehrs von den Quellports empfängt.
+\subsection*{Frage 5.5 \normalfont Was bedeutet es für den linken PC, dass er an einem Mirror Port hängt? Wie wirkt sich das auf seine Kommunkationsfähigkeit aus? Welche ports sollten für einen Mirror Port verwendet werden und warum?}
+Wenn der linke PC an einem Mirror Port hängt, bedeutet das, dass er eine Kopie des Netzwerkverkehrs von den Quellports empfängt. Dies sollte seine normale Kommunikationsfähigkeit nicht beeinflussen - er kann immer noch Netzwerkverkehr senden und empfangen wie gewohnt. Der Unterschied ist, dass er zusätzlich eine Kopie des Netzwerkverkehrs von den Quellports empfängt.\\
 
-In Bezug auf die Auswahl der Ports für einen Mirror Port, sollte der Mirror Port in der Regel an einen dedizierten Überwachungs- oder Analysegerät angeschlossen werden, wie z.B. einen PC mit Netzwerkanalyse-Software (wie Wireshark). Der Quellport (oder die Quellports) sollte derjenige sein, dessen Verkehr Sie überwachen oder analysieren möchten. Es ist wichtig zu beachten, dass der Mirror Port nur eine Kopie des Verkehrs empfängt - er kann nicht auf diesen Verkehr antworten oder interagieren. Daher ist es in der Regel nicht sinnvoll, einen Mirror Port für normale Netzwerkkommunikation zu verwenden.\\
+\noindent In Bezug auf die Auswahl der Ports für einen Mirror Port, sollte der Mirror Port in der Regel an einen dedizierten Überwachungs- oder Analysegerät angeschlossen werden, wie z.B. einen PC mit Netzwerkanalyse-Software (wie Wireshark). Der Quellport (oder die Quellports) sollte derjenige sein, dessen Verkehr Sie überwachen oder analysieren möchten. Es ist wichtig zu beachten, dass der Mirror Port nur eine Kopie des Verkehrs empfängt - er kann nicht auf diesen Verkehr antworten oder interagieren. Daher ist es in der Regel nicht sinnvoll, einen Mirror Port für normale Netzwerkkommunikation zu verwenden.\\
 
 \pagebreak
 \section{Tests und Interpretation ihrer Resultate}

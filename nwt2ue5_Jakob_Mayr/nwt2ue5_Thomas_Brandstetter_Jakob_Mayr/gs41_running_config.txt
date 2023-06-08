@@ -1,28 +1,54 @@
-Switch#show run
+GS41#show run
 Building configuration...
 
-Current configuration : 1164 bytes
+Current configuration : 1553 bytes
+!
+! Last configuration change at 02:40:44 UTC Mon Mar 1 1993
 !
 version 15.0
-no service timestamps log datetime msec
-no service timestamps debug datetime msec
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
 no service password-encryption
 !
-hostname Switch
+hostname GS41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+system mtu routing 1500
 !
 !
 !
 !
 !
 !
+!
+!
+!
+!
+port-channel load-balance src-dst-ip
 spanning-tree mode pvst
 spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
 !
 interface Port-channel1
 !
 interface FastEthernet0/1
+ channel-protocol lacp
+ channel-group 1 mode active
 !
 interface FastEthernet0/2
+ channel-protocol lacp
+ channel-group 1 mode active
 !
 interface FastEthernet0/3
 !
@@ -65,10 +91,8 @@ interface FastEthernet0/21
 interface FastEthernet0/22
 !
 interface FastEthernet0/23
- channel-group 1 mode active
 !
 interface FastEthernet0/24
- channel-group 1 mode active
 !
 interface GigabitEthernet0/1
 !
@@ -78,17 +102,15 @@ interface Vlan1
  no ip address
  shutdown
 !
+ip http server
+ip http secure-server
 !
-!
+vstack
 !
 line con 0
-!
-line vty 0 4
- login
 line vty 5 15
- login
 !
 !
-!
-!
+monitor session 1 source interface Po1
+monitor session 1 destination interface Fa0/23
 end
