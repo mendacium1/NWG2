@@ -181,14 +181,11 @@ Ohne Link Aggregation, auch bekannt als Port Trunking oder EtherChannel, würden
 Dies kann erreicht werden, indem man beispielsweise das Load Balancing so konfiguriert, dass es auf der Basis der Quell- und Ziel-IP-Adressen und/oder Portnummern arbeitet. Auf diese Weise würde der Verkehr von und zu den beiden verschiedenen Rechnern wahrscheinlich auf die beiden verschiedenen Links verteilt werden, was dazu beitragen würde, dass beide Rechner mit voller Geschwindigkeit bedient werden.\\
 
 \subsection*{Frage 5.3 \normalfont Wenn Gruppe A die ACLs bereits fertig konfiguriert hat, Gruppe B aber nicht, wie wirkt sich das auf Ping zwischen den linken PCs aus? Falls es nicht geht, welche Fehlermeldungen erscheinen wann?}
-In diesem Szenario, wenn Gruppe A ihre ACLs so konfiguriert hat, dass jeglicher Trafic von den anderen linken PCs (PCx1) auf den eigenen linken PC am Routerinterface Gi0/0 eingehend geblockt wird, und jeglicher ICMP Trafic (Ping) vom eigenen rechten PC auf alle anderen Geräte am Routerinterface Gi0/1 eingehend geblockt wird, dann wird jeglicher Ping-Verkehr, der von den PCs der Gruppe A ausgeht, blockiert.\\
 
-\noindent Wenn Gruppe B ihre ACLs jedoch nicht konfiguriert hat, dann gibt es auf ihrer Seite keine Beschränkungen für den Netzwerkverkehr. Das bedeutet, dass Ping-Verkehr von den PCs der Gruppe B zu den PCs der Gruppe A möglich ist, aber die Antworten von den PCs der Gruppe A werden aufgrund der ACLs der Gruppe A blockiert.\\
-
-\noindent In Bezug auf Fehlermeldungen, wenn ein Ping-Versuch durchgeführt wird und die Antwort blockiert wird, wird in der Regel eine „Request timed out“ oder „Destination host unreachable“ Nachricht angezeigt. Dies zeigt an, dass der Ping-Request nicht erfolgreich war, weil keine Antwort vom Ziel-PC empfangen wurde.\\
-
-\pagebreak
-
+\begin{itemize}
+  \item Gruppe B bekommt ein „Destination Host Unreachable“, da der Router von Gruppe A den Trafik blockiert.
+  \item Gruppe A kann normal pingen da keine ACL dies verhindert und bekommt somit einen erfolgreichen Ping-Echo.
+\end{itemize}
 \subsection*{Frage 5.4 \normalfont Wie wirken sich die ACLs auf den Kontakt zum FTP Server aus, und warum?} 
 Da die ACL einerseits den Trafik von anderen Clients (PCx1) und andererseits ICMP Trafik sperren, haben sie keine Auswirkung auf den Kontakt zum FTP Server. Wichtig ist dafür jedoch die „permit ip any any“ regel am Ende der ACL.\\
 
