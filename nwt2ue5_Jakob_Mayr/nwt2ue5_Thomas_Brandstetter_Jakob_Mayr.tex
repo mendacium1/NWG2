@@ -77,9 +77,9 @@ Als Default-Gateway wird sowohl für IPv4 als auch für IPv6 der Backbone-Router
 \end{table}
 
 \noindent Als nächstes müssen auf dem Router die notwendigen ACLs (access-control-lists) konfiguriert werden.\\
-Hierfür soll sowohl jeder eingehende Traffic von den PCx1's zu PC41, als auch jeder eingehende ICMP Traffic zu PC42 belockt werden.\\
+Hierfür soll sowohl jeder eingehende Trafik von den PCx1's zu PC41, als auch jeder eingehende ICMP Trafik zu PC42 geblockt werden.\\
 Für die ACL der linken PCs werden die Adressen der PCx1's einzeln in einer IPv4 und einer IPv6 ACL geblockt.\\
-Für die ACL des rechten PCs wird jeder ICMP Traffik belockt.\\
+Für die ACL des rechten PCs wird jeder ICMP Trafik geblockt.\\
 
 \begin{table}[htbp]
     \centering
@@ -91,13 +91,13 @@ Für die ACL des rechten PCs wird jeder ICMP Traffik belockt.\\
         \hline
         ip access-list extended <ACL-name> & Mit diesem Befehl wird eine ACL für IPv6 angelegt.\\
         \hline
-        deny ip host <src-ip-address> host <dest-ip-address> & Mit diesem Befehl wird der Traffik von der src-ip-Adresse zur dest-ip-Adresse geblockt.\\ 
+        deny ip host <src-ip-address> host <dest-ip-address> & Mit diesem Befehl wird der Trafik von der src-ip-Adresse zur dest-ip-Adresse geblockt.\\ 
         \hline
-        deny ipv6 host <src-ipv6-address> host <dest-ipv6-address> & Mit diesem Befehl wird der Traffik von der src-ipv6-Adresse zur dest-ipv6-Adresse geblockt.\\
+        deny ipv6 host <src-ipv6-address> host <dest-ipv6-address> & Mit diesem Befehl wird der Trafik von der src-ipv6-Adresse zur dest-ipv6-Adresse geblockt.\\
         \hline
         deny icmp host <ipv4/ipv6-address> any & Mit diesem Befehl wird jeder eingehende icmp auf die angegebene Adresse geblockt.\\
         \hline
-        permit ip any any / ipv6 permint any any & Diese Befehle müssen am Ende einer ACL hinzugefügt werden, da die Regeln Schritt-für-Schritt abgearbeitet werden und Traffik per-default geblockt wird. Nur mit dieser Regel wird der Traffik welcher von keiner vorherigen Regel geblockt oder speziell erlaubt wird durchgelassen.\\ 
+        permit ip any any / ipv6 permit any any & Diese Befehle müssen am Ende einer ACL hinzugefügt werden, da die Regeln Schritt-für-Schritt abgearbeitet werden und Trafik per-default geblockt wird. Nur mit dieser Regel wird der Trafik welcher von keiner vorherigen Regel geblockt oder speziell erlaubt wird durchgelassen.\\ 
         \bottomrule
     \end{tabularx}
     \caption{Verwendete Befehle zum anlegen der ACLs}
@@ -134,7 +134,7 @@ Hierzu müssen zuerst auf beiden Switches ein Port-Channel (1) mit dem load-bala
         \toprule
         \textbf{Befehl} & \textbf{Erklärung} \\
         \midrule
-        port-channel load-balance <load-balancind-mode> & Mit diesem Befehl wird ein Port-Channel mit dem jeweiligen load-balancing-mode konfiguriert. (Für diese Aufgabe funktioniert der „src-dst-ip“ mode, da bei diesem der Traffik der beiden Clients klar von einander getrennt werden kann. Anders könnte der Traffik nicht auf zwei Interfaces aufgeteilt werden.)\\
+        port-channel load-balance <load-balancind-mode> & Mit diesem Befehl wird ein Port-Channel mit dem jeweiligen load-balancing-mode konfiguriert. (Für diese Aufgabe funktioniert der „src-dst-ip“ mode, da bei diesem der Trafik der beiden Clients klar von einander getrennt werden kann. Anders könnte der Trafik nicht auf zwei Interfaces aufgeteilt werden.)\\
         \hline
         channel-protocol <protocol> & Mit diesem Befehl wird auf dem jeweiligen Interface das channel-protocol spezifiziert. (Für diese Aufgabe das lacp - link aggregation control protocol.)\\
         \hline
@@ -181,7 +181,7 @@ Ohne Link Aggregation, auch bekannt als Port Trunking oder EtherChannel, würden
 Dies kann erreicht werden, indem man beispielsweise das Load Balancing so konfiguriert, dass es auf der Basis der Quell- und Ziel-IP-Adressen und/oder Portnummern arbeitet. Auf diese Weise würde der Verkehr von und zu den beiden verschiedenen Rechnern wahrscheinlich auf die beiden verschiedenen Links verteilt werden, was dazu beitragen würde, dass beide Rechner mit voller Geschwindigkeit bedient werden.\\
 
 \subsection*{Frage 5.3 \normalfont Wenn Gruppe A die ACLs bereits fertig konfiguriert hat, Gruppe B aber nicht, wie wirkt sich das auf Ping zwischen den linken PCs aus? Falls es nicht geht, welche Fehlermeldungen erscheinen wann?}
-In diesem Szenario, wenn Gruppe A ihre ACLs so konfiguriert hat, dass jeglicher Traffic von den anderen linken PCs (PCx1) auf den eigenen linken PC am Routerinterface Gi0/0 eingehend geblockt wird, und jeglicher ICMP Traffic (Ping) vom eigenen rechten PC auf alle anderen Geräte am Routerinterface Gi0/1 eingehend geblockt wird, dann wird jeglicher Ping-Verkehr, der von den PCs der Gruppe A ausgeht, blockiert.\\
+In diesem Szenario, wenn Gruppe A ihre ACLs so konfiguriert hat, dass jeglicher Trafic von den anderen linken PCs (PCx1) auf den eigenen linken PC am Routerinterface Gi0/0 eingehend geblockt wird, und jeglicher ICMP Trafic (Ping) vom eigenen rechten PC auf alle anderen Geräte am Routerinterface Gi0/1 eingehend geblockt wird, dann wird jeglicher Ping-Verkehr, der von den PCs der Gruppe A ausgeht, blockiert.\\
 
 \noindent Wenn Gruppe B ihre ACLs jedoch nicht konfiguriert hat, dann gibt es auf ihrer Seite keine Beschränkungen für den Netzwerkverkehr. Das bedeutet, dass Ping-Verkehr von den PCs der Gruppe B zu den PCs der Gruppe A möglich ist, aber die Antworten von den PCs der Gruppe A werden aufgrund der ACLs der Gruppe A blockiert.\\
 
@@ -190,9 +190,9 @@ In diesem Szenario, wenn Gruppe A ihre ACLs so konfiguriert hat, dass jeglicher 
 \pagebreak
 
 \subsection*{Frage 5.4 \normalfont Wie wirken sich die ACLs auf den Kontakt zum FTP Server aus, und warum?} 
-Da die ACL einerseits den Traffik von anderen Clients (PCx1) und andererseits ICMP Traffik sperren, haben sie keine Auswirkung auf den Kontakt zum FTP Server. Wichtig ist dafür jedoch die „permit ip any any“ regel am Ende der ACL.\\
+Da die ACL einerseits den Trafik von anderen Clients (PCx1) und andererseits ICMP Trafik sperren, haben sie keine Auswirkung auf den Kontakt zum FTP Server. Wichtig ist dafür jedoch die „permit ip any any“ regel am Ende der ACL.\\
 
-\subsection*{Frage 5.5 \normalfont Was bedeutet es für den linken PC, dass er an einem Mirror Port hängt? Wie wirkt sich das auf seine Kommunkationsfähigkeit aus? Welche ports sollten für einen Mirror Port verwendet werden und warum?}
+\subsection*{Frage 5.5 \normalfont Was bedeutet es für den linken PC, dass er an einem Mirror Port hängt? Wie wirkt sich das auf seine Kommunikationsfähigkeit aus? Welche ports sollten für einen Mirror Port verwendet werden und warum?}
 Wenn der linke PC an einem Mirror Port hängt, bedeutet das, dass er eine Kopie des Netzwerkverkehrs von den Quellports empfängt. Dies sollte seine normale Kommunikationsfähigkeit nicht beeinflussen - er kann immer noch Netzwerkverkehr senden und empfangen wie gewohnt. Der Unterschied ist, dass er zusätzlich eine Kopie des Netzwerkverkehrs von den Quellports empfängt.\\
 
 \noindent In Bezug auf die Auswahl der Ports für einen Mirror Port, sollte der Mirror Port in der Regel an einen dedizierten Überwachungs- oder Analysegerät angeschlossen werden, wie z.B. einen PC mit Netzwerkanalyse-Software (wie Wireshark). Der Quellport (oder die Quellports) sollte derjenige sein, dessen Verkehr Sie überwachen oder analysieren möchten. Es ist wichtig zu beachten, dass der Mirror Port nur eine Kopie des Verkehrs empfängt - er kann nicht auf diesen Verkehr antworten oder interagieren. Daher ist es in der Regel nicht sinnvoll, einen Mirror Port für normale Netzwerkkommunikation zu verwenden.\\
