@@ -89,7 +89,7 @@ Für die ACL des rechten PCs wird jeder ICMP Trafik geblockt.\\
         \midrule
         ip access-list extended <ACL-name> & Mit diesem Befehl wird eine ACL für IPv4 angelegt.\\
         \hline
-        ip access-list extended <ACL-name> & Mit diesem Befehl wird eine ACL für IPv6 angelegt.\\
+        ipv6 access-list extended <ACL-name> & Mit diesem Befehl wird eine ACL für IPv6 angelegt.\\
         \hline
         deny ip host <src-ip-address> host <dest-ip-address> & Mit diesem Befehl wird der Trafik von der src-ip-Adresse zur dest-ip-Adresse geblockt.\\ 
         \hline
@@ -158,8 +158,6 @@ Zuletzt soll auf dem Gruppenswitch GS41 noch ein Mirror-Port eingerichtet werden
         monitor session <number> source interface <interface-name> & Mit diesem Befehl wird der Eingangsport für den Mirror-Port bestimmt.\\
         \hline
         monitor session <number> destination interface <interface-name> & Mit diesem Befehl wird der Ausgangsport für den Mirror-Port bestimmt.\\
-        \hline
-        channel-group <number> mode <aktiv/passive> & Mit diesem Befehl wird auf dem jeweiligen Interface die channel-group in dem spezifizierten Modus konfiguriert.\\
         \bottomrule
     \end{tabularx}
     \caption{Verwendete Befehle zur Konfiguration des Mirror-Ports}
@@ -188,6 +186,8 @@ Dies kann erreicht werden, indem man beispielsweise das Load Balancing so konfig
 \end{itemize}
 \subsection*{Frage 5.4 \normalfont Wie wirken sich die ACLs auf den Kontakt zum FTP Server aus, und warum?} 
 Da die ACL einerseits den Trafik von anderen Clients (PCx1) und andererseits ICMP Trafik sperren, haben sie keine Auswirkung auf den Kontakt zum FTP Server. Wichtig ist dafür jedoch die „permit ip any any“ regel am Ende der ACL.\\
+
+\pagebreak
 
 \subsection*{Frage 5.5 \normalfont Was bedeutet es für den linken PC, dass er an einem Mirror Port hängt? Wie wirkt sich das auf seine Kommunikationsfähigkeit aus? Welche ports sollten für einen Mirror Port verwendet werden und warum?}
 Wenn der linke PC an einem Mirror Port hängt, bedeutet das, dass er eine Kopie des Netzwerkverkehrs von den Quellports empfängt. Dies sollte seine normale Kommunikationsfähigkeit nicht beeinflussen - er kann immer noch Netzwerkverkehr senden und empfangen wie gewohnt. Der Unterschied ist, dass er zusätzlich eine Kopie des Netzwerkverkehrs von den Quellports empfängt.\\
