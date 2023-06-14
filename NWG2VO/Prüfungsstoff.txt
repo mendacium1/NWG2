@@ -1,0 +1,26 @@
+Moodle vor Ort
+28. JUni 11:15
+Labor FOR - FH2 Ebene 4
+90 min
+closed book (keine technischen Hilfmittel)
+Zettel erlaubt
+Fragekategorien mit zufälligen Fragen
+Freitextfragen, Kurzantwortfragen, Multiple Choice Fragen, Single Choice Fragen, Wahr/Falsch Fragen, Multiple Wahr/Falsch Fragen, Auswahlfragen, Zuordnungsfragen
+(Multiple Choice Fragen - hälft zu Kreuzen)
+Richtiges Kreuzerl bringt anteilig PUnkte
+falsches Kreuzerl kostet anteilig PUnkte
+nicht gemachtes Kreuzerl bringt anteilig Punkte nicht
+ein falsche Kreuzerl wiegt schwerer als ein falsch nicht gemachtes Kreuzel
+-> lieber nicht Kreuzen als falsch Kreuzen
+
+Fragestunde: 26. oder 27. Juni
+
+Schwerpunkte:
+in progress
+obsolet: IPv4 Klassensystem, Koaxialkabel
+
+Fragen:
+Kabel gegeben und dann multiple Choice welcher Typ.
+Wie funktioniert Benennungsschema für Twisted pair?
+Welche Ebenen gibt es zur Gebäudeverkabelung?
+
