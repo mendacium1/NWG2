@@ -19,11 +19,15 @@ Ethernet adapter Ethernet 2:
    Physical Address. . . . . . . . . : 00-0A-CD-26-D8-F6
    DHCP Enabled. . . . . . . . . . . : No
    Autoconfiguration Enabled . . . . : Yes
-   IPv6 Address. . . . . . . . . . . : fd00:1000::4:1(Preferred)
+   IPv6 Address. . . . . . . . . . . : 2a0c:2343:0:42::2(Preferred)
+   IPv6 Address. . . . . . . . . . . : 2a0c:2343:0:42:8589:bfef:6600:d5f3(Preferred)
+   Temporary IPv6 Address. . . . . . : 2a0c:2343:0:42:1416:635e:3544:ee6d(Preferred)
    Link-local IPv6 Address . . . . . : fe80::a158:e20:a89f:498f%12(Preferred)
-   IPv4 Address. . . . . . . . . . . : 192.168.4.2(Preferred)
-   Subnet Mask . . . . . . . . . . . : 255.255.0.0
-   Default Gateway . . . . . . . . . : 
+   IPv4 Address. . . . . . . . . . . : 185.252.71.122(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.252
+   Default Gateway . . . . . . . . . : 2a0c:2343:0:42::1
+                                       fe80::2f6:63ff:fe7d:1901%12
+                                       185.252.73.121
    DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
                                        fec0:0:0:ffff::2%1
                                        fec0:0:0:ffff::3%1
