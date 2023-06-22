@@ -1,0 +1,32 @@
+C:\Users\admin_SIN>ipconfig /all
+
+   Host Name . . . . . . . . . . . . : HAGSINPC08
+   Primary Dns Suffix . . . . . .  . : fhooe.at
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : fhooe.at
+                                       hagenberg.fhooe.at
+                                       steyr.fhooe.at
+                                       mgmt.fhooe.at
+                                       wels.fhooe.at
+                                       linz.fhooe.at
+
+Ethernet adapter Ethernet 2:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Realtek PCIe GBE Family Controller
+   Physical Address. . . . . . . . . : 00-0A-CD-26-D8-F6
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : fd00:1000::4:1(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::a158:e20:a89f:498f%12(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.4.2(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+C:\Users\admin_SIN>
