@@ -1,0 +1,132 @@
+Building configuration...
+
+Current configuration : 1768 bytes
+!
+! Last configuration change at 14:05:28 UTC Fri Jun 16 2023
+!
+version 15.7
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GR41
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn FCZ2033B0E1
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.110
+!
+interface GigabitEthernet0/0.190
+ encapsulation dot1Q 190
+ ip address 185.252.73.114 255.255.255.252
+ ipv6 address 2A0C:2343:0:40::2/64
+ ipv6 ospf 1 area 0
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1.110
+ encapsulation dot1Q 110
+ ip address 185.252.73.117 255.255.255.252
+ ipv6 address 2A0C:2343:0:41::1/64
+ ipv6 enable
+ ipv6 ospf 1 area 0
+!
+interface GigabitEthernet0/1.120
+ encapsulation dot1Q 120
+ ip address 185.252.73.121 255.255.255.252
+ ipv6 address 2A0C:2343:0:42::1/64
+ ipv6 enable
+ ipv6 ospf 1 area 0
+!
+router ospf 1
+ network 185.252.73.112 0.0.0.3 area 0
+ network 185.252.73.116 0.0.0.3 area 0
+ network 185.252.73.120 0.0.0.3 area 0
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 185.252.73.113
+!
+ipv6 route ::/0 2A0C:2343:0:40::1
+ipv6 router ospf 1
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
