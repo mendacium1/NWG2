@@ -1,0 +1,25 @@
+Zeit ist kein großes Thema
+50/50 Theoriefragen/Andwendungsorientierte Fragen
+
+
+TCP:
+Bestehende TCP-Verbindung zw. A & B, wobei die momentanen Sequencenummern gegeben sind. Datenmengen angegeben, welche Flags werden angegeben, welche ACK und SEQ-Nummern ergeben sich.
+ACK sind alle Pakete plus erwartetetn aka emfpänger des akas hat ack-nummer - 1 gesendet.
+ISN - initial sequence number (random), gibt indirekt nat. ACK-nummer an, es werden nur Nutzdaten gezählt, auf und abbau haben 1 Byte an Nutzdaten
+Bestätigungen müssen nat. nicht bestätigt werden
+Folie mit erstem Window ist wichtig, binhaltet alles (Seq, ACK)
+Nach Bestätigung "gleitet" Fenster weiter
+Wieviele bytes können maximal in einem Fenster übergegeben werden?
+    1460 Bytes, da MTU von Ethernet 1500 Bytes (IP- + TCP-Header)
+    Mit anderen Technologien (Jumbo Frames) können es auch mehr Bytes sein
+    Maximum Segment-Size Option:
+      Info über max. Größe zu TCP-Segment
+      Fragmentieren ist aufwendig - Geräte am Übertragungsweg werden "unnötig" belastet
+
+Routing:
+Gateway 0.0.0.0 ist wie "leer" anzusehen
+Control Plane ist operativ in software und ist für Kommunikation mit anderen Routern etc. über Protokolle verantwortlich
+Data Plane arbeitet möglichst Latenzfrei und ist in Hardware abgebildet
+
+
+
